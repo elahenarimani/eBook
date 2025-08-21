@@ -12,3 +12,8 @@ export interface Book {
   subSubCategory?: string;
   tags: string[];
 }
+export interface IconProps {
+  width?: number | string;
+  height?: number | string;
+  fill?: string;
+}

@@ -1,0 +1,49 @@
+"use client";
+import React from "react";
+interface BTNProps {
+  onClickHandler: () => void;
+  variant: "Primary" | "Secondary" | "Tertiary" | "Destructive";
+  children: React.ReactNode;
+}
+interface variantsProps {
+  Primary: string;
+  Secondary: string;
+  Tertiary: string;
+  Destructive: string;
+}
+const PrimaryBtn = ({
+  onClickHandler,
+  variant = "Primary",
+  children,
+}: BTNProps) => {
+  const styles: string =
+    "h-[44px] p-[12px] flex justify-between items-center gap-[8px] cursor-pointer";
+  const variants: variantsProps = {
+    Primary:
+      "w-[148px]  rounded-[8px] bg-primary text-white border-[1px] border-gray-5" +
+      "hover:bg-primary/600 focus:bg-primary/600 focus:ring-4 focus:ring-[#C4A6CF] active:bg-[#563C5C]" +
+      "disabled:bg-gray-30  disabled:cursor-not-allowed",
+    Secondary:
+      "w-[148px]  rounded-[8px] border-[1.5px] border-gray-50 bg-[#EBEBEB] border-[1.5px] border-gray-40 " +
+      "hover:bg-gray-20 hover:border-gray-30 hover:border-[1.5px] focus:bg-gray-30 focus:ring-2 focus:ring-[#D9C6E1] active:bg-Primary-100 active:border-[1.5px] active:border-gray-20" +
+      "disabled:bg-gray-30 disabled:border-gray-30 disabled:cursor-not-allowed",
+    Tertiary:
+      "w-[148px]  bg-gray-20 " +
+      "hover:bg-gray-20 focus:bg-gray-5 focus:ring-2 focus:ring-[#D9C6E1] active:bg-[#563C5C]" +
+      "disabled:bg-gray-30  disabled:cursor-not-allowed",
+    Destructive:
+      "w-[156px] rounded-[8px] bg-[#EC0B1A] " +
+      "hover:bg-[#FF2E3C] focus:bg-[#EC0B1A] focus:ring-4 focus:ring-[#FF9AA1] active:bg-[#8C1018]" +
+      "disabled:bg-gray-30  disabled:cursor-not-allowed",
+  };
+  return (
+    <button
+      className={`${styles} ${variants[variant]}`}
+      onClick={onClickHandler}
+    >
+      {children}
+    </button>
+  );
+};
+
+export default PrimaryBtn;

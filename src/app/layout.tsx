@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import localFont from 'next/font/local'
+import type { Metadata } from "next";
+import localFont from "next/font/local";
 
 const vazirFont = localFont({
   src: "../font/Vazirmatn-Regular.ttf",
@@ -18,9 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa">
-      <body
-        className={`${vazirFont.className} antialiased`}
-      >
+      <body className={`${vazirFont.className} antialiased`}>
+        {/* <Header /> */}
         {children}
       </body>
     </html>
