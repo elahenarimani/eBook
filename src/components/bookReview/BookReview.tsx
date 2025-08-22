@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-// interface BookReviewrops {
-//   onClickHandler: () => void;
-//   variant: "Primary" | "Secondary" | "Tertiary" | "Destructive";
-//   children: React.ReactNode;
-// }
 const BookReview = () => {
   const [reviewText, setReviewText] = useState("");
   const [error, setError] = useState(false);
-  //   const [isDisabled, setIsDisabled] = useState(false);
   const isDisabled: boolean = true;
   const minLength = 5;
   const maxLength = 500;
@@ -27,7 +21,7 @@ const BookReview = () => {
         توضیحات
       </label>
       <div
-        className={`w-full h-[165px] px-[16px] py-[8px] border-[1px] ${error ? "border-[#EC0B1A] ring-1 ring-[#EC0B1A]" : "border-[#D7D7D7] focus-within:border-[#8B6099] focus-within:border-[1px] focus-within:ring-4 focus-within:ring-[#EADFEF]"}  
+        className={`w-full h-[165px] px-[16px] py-[8px] border-[1px] ${error ? "border-[#EC0B1A] ring-1 ring-[#EC0B1A]" : "border-[#D7D7D7] focus-within:border-[#8B6099] focus-within:border-[1px] focus-within:ring-4 focus-within:ring-[#EADFEF]"}
          rounded-[12px] flex flex-col justify-between items-start ${isDisabled ? "bg-[#D7D7D7]" : "bg-white"}
        `}
       >

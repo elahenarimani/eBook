@@ -1,11 +1,16 @@
-"use client";
-import BookReview from "@/components/bookReview/BookReview";
+// "use client";
+import Checkbox from "../components/checkBox/CheckBox";
+// import CheckBoxButton, { Checkbox } from "../components/checkBox/CheckBox";
+
+// import BookReview from "@/components/bookReview/BookReview";
+// import CheckBox from "@/components/checkBox/CheckBox";
+
 // import PrimaryBtn from "../components/button/PrimaryBtn";
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+      <main className="w-full h-full flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         {/* <PrimaryBtn
           variant={"Primary"}
           onClickHandler={() => {
@@ -38,7 +43,8 @@ export default function Home() {
         >
           hello
         </PrimaryBtn> */}
-        <BookReview />
+        {/* <CheckBoxButton /> */}
+        <Checkbox />
         <p>سلام دنیا</p>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>

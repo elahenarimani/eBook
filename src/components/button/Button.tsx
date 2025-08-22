@@ -11,7 +11,7 @@ interface variantsProps {
   Tertiary: string;
   Destructive: string;
 }
-const PrimaryBtn = ({
+const Button = ({
   onClickHandler,
   variant = "Primary",
   children,
@@ -46,4 +46,4 @@ const PrimaryBtn = ({
   );
 };
 
-export default PrimaryBtn;
+export default Button;
