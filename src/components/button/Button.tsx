@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
+
 interface BTNProps {
   onClickHandler: () => void;
   variant: "Primary" | "Secondary" | "Tertiary" | "Destructive";
   children: React.ReactNode;
 }
+
 interface variantsProps {
   Primary: string;
   Secondary: string;

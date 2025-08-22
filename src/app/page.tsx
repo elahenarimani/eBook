@@ -1,5 +1,5 @@
 // "use client";
-import Checkbox from "../components/checkBox/CheckBox";
+import Footer from "@/components/footer/Footer";
 // import CheckBoxButton, { Checkbox } from "../components/checkBox/CheckBox";
 
 // import BookReview from "@/components/bookReview/BookReview";
@@ -9,8 +9,8 @@ import Checkbox from "../components/checkBox/CheckBox";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="w-full h-full flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div>
+      <main>
         {/* <PrimaryBtn
           variant={"Primary"}
           onClickHandler={() => {
@@ -44,10 +44,12 @@ export default function Home() {
           hello
         </PrimaryBtn> */}
         {/* <CheckBoxButton /> */}
-        <Checkbox />
-        <p>سلام دنیا</p>
+        {/* <Checkbox /> */}
+        {/* <p>سلام دنیا</p> */}
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
+      <footer className="w-full h-full">
+        <Footer />
+      </footer>
     </div>
   );
 }
