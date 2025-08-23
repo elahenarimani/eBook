@@ -1,5 +1,5 @@
 "use client";
-import { books } from "@/data/books"; // مسیر فایل books رو درست وارد کن
+import React, { useState } from "react";
 import {
   Command,
   CommandEmpty,
@@ -8,7 +8,8 @@ import {
   CommandItem,
   CommandList,
 } from "cmdk";
-import React, { useState } from "react";
+
+import { books } from "@/data/books";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -25,7 +26,7 @@ const SearchBar = () => {
   );
 
   return (
-    <Command className="w-full h-full px-[4px]border-[1.5px] border-[#c3c3c3] rounded-[8px]">
+    <Command className="w-full h-full px-[4px] border-[1.5px] border-[#c3c3c3] rounded-[8px]">
       <CommandInput
         className="w-full h-full text-[14px] pr-[6.5px] border-[1.5px] border-[#c3c3c3] rounded-[8px] focus:outline-none focus:ring-0"
         placeholder="جستجو در کنج "

@@ -1,6 +1,7 @@
-import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+
+import "./globals.css";
 
 const vazirFont = localFont({
   src: "../font/Vazirmatn-Regular.ttf",

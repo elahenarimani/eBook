@@ -23,21 +23,21 @@
 // ];
 
 // export default eslintConfig;
-import { FlatCompat } from '@eslint/eslintrc';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import importPlugin from 'eslint-plugin-import';
-import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import prettier from 'eslint-plugin-prettier';
-import betterTailwind from 'eslint-plugin-better-tailwindcss';
-import globals from 'globals';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import unusedImports from 'eslint-plugin-unused-imports';
-import nextPlugin from '@next/eslint-plugin-next';
+import { FlatCompat } from "@eslint/eslintrc";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
+import importPlugin from "eslint-plugin-import";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import reactPlugin from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import prettier from "eslint-plugin-prettier";
+import betterTailwind from "eslint-plugin-better-tailwindcss";
+import globals from "globals";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import unusedImports from "eslint-plugin-unused-imports";
+import nextPlugin from "@next/eslint-plugin-next";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -47,26 +47,26 @@ const compat = new FlatCompat({
   recommendedConfig: {},
 });
 
-const eslintConfig =[
+const eslintConfig = [
   ...compat.extends(
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:@next/next/recommended',
-    'prettier',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
   ),
   {
-    files: ['**/*.{ts,tsx,js,jsx}'],
+    files: ["**/*.{ts,tsx,js,jsx}"],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
+        ecmaVersion: "latest",
+        sourceType: "module",
         ecmaFeatures: {
           jsx: true,
         },
-        project: path.join(__dirname, './tsconfig.json'),
+        project: path.join(__dirname, "./tsconfig.json"),
       },
       globals: {
         ...globals.browser,
@@ -74,102 +74,111 @@ const eslintConfig =[
     },
     settings: {
       react: {
-        version: 'detect',
+        version: "detect",
       },
-      'import/resolver': {
+      "import/resolver": {
         typescript: {
           alwaysTryTypes: true,
-          project: './tsconfig.json',
+          project: "./tsconfig.json",
         },
         node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
       },
-      'better-tailwindcss': {
-        entryPoint: 'app/globals.css',
+      "better-tailwindcss": {
+        entryPoint: "src/app/globals.css",
       },
     },
     plugins: {
-      '@typescript-eslint': tsPlugin,
+      "@typescript-eslint": tsPlugin,
       import: importPlugin,
-      'simple-import-sort': simpleImportSort,
+      "simple-import-sort": simpleImportSort,
       react: reactPlugin,
-      'react-hooks': reactHooks,
-      'jsx-a11y': jsxA11y,
+      "react-hooks": reactHooks,
+      "jsx-a11y": jsxA11y,
       prettier,
-      'better-tailwindcss': betterTailwind,
-      'unused-imports': unusedImports,
-      '@next': nextPlugin,
+      "better-tailwindcss": betterTailwind,
+      "unused-imports": unusedImports,
+      "@next": nextPlugin,
     },
     rules: {
       // Tailwind
-      'better-tailwindcss/no-unnecessary-whitespace': 'warn',
-      'better-tailwindcss/no-duplicate-classes': 'warn',
-      'better-tailwindcss/enforce-consistent-variable-syntax': 'warn',
-      'better-tailwindcss/no-unregistered-classes': 'warn',
+      "better-tailwindcss/no-unnecessary-whitespace": "warn",
+      "better-tailwindcss/no-duplicate-classes": "warn",
+      "better-tailwindcss/enforce-consistent-variable-syntax": "warn",
+      "better-tailwindcss/no-unregistered-classes": "warn",
 
       // Unused Variables and Imports
-      'no-unused-vars': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
-      'unused-imports/no-unused-imports': 'error',
-      'unused-imports/no-unused-vars': [
-        'error',
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "error",
         {
-          vars: 'all',
-          varsIgnorePattern: '^_',
-          args: 'all',
-          argsIgnorePattern: '^_',
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "all",
+          argsIgnorePattern: "^_",
           ignoreRestSiblings: true,
         },
       ],
-      '@typescript-eslint/no-unused-vars': [
-        'error',
+      "@typescript-eslint/no-unused-vars": [
+        "error",
         {
-          args: 'all',
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
+          args: "all",
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
           ignoreRestSiblings: true,
         },
       ],
 
       // React Props
-      'react/no-unused-prop-types': 'warn',
+      "react/no-unused-prop-types": "warn",
 
       // Imports
-      'import/no-unresolved': 'off',
-      'import/no-duplicates': 'error',
-      'import/no-self-import': 'error',
-      'import/no-cycle': ['error', { maxDepth: Infinity }],
-      'simple-import-sort/imports': [
-        'warn',
+      "import/no-unresolved": "off",
+      "import/no-duplicates": "error",
+      "import/no-self-import": "error",
+      "import/no-cycle": ["error", { maxDepth: Infinity }],
+      "simple-import-sort/imports": [
+        "warn",
         {
-          groups: [['^']],
+          groups: [
+            ["^react", "^[a-z]"],
+            ["^.+\\.s?css$"],
+            ["^\\./", "^\\.\\./"],
+          ],
         },
       ],
-      'simple-import-sort/exports': 'warn',
+      "simple-import-sort/exports": "warn",
 
       // Prettier
-      'prettier/prettier': 'error',
+      "prettier/prettier": [
+        "error",
+        {
+          endOfLine: "auto",
+        },
+      ],
 
       // React
-      'react/jsx-uses-react': 'off',
-      'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
-      'react/jsx-key': 'error',
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      "react/jsx-key": "error",
 
       // Hooks
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'off',
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "off",
 
       // A11y
-      'jsx-a11y/alt-text': 'warn',
-      'jsx-a11y/anchor-is-valid': 'warn',
-           // Shorthand
-      'object-shorthand': ['error', 'always'],
+      "jsx-a11y/alt-text": "warn",
+      "jsx-a11y/anchor-is-valid": "warn",
+      // Shorthand
+      "object-shorthand": ["error", "always"],
     },
   },
   {
-      ignores: ['.next/', 'node_modules/', 'next-env.d.ts'],
+    ignores: [".next/", "node_modules/", "next-env.d.ts"],
   },
 ];
 export default eslintConfig;

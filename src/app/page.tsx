@@ -1,5 +1,9 @@
 // "use client";
-import Footer from "@/components/footer/Footer";
+// import Button from "@/components/button/Button";
+import FooterDes from "../components/footer/FooterDes";
+
+// import FooterMobSize from "@/components/footer/FooterMobSize";
+
 // import CheckBoxButton, { Checkbox } from "../components/checkBox/CheckBox";
 
 // import BookReview from "@/components/bookReview/BookReview";
@@ -11,44 +15,45 @@ export default function Home() {
   return (
     <div>
       <main>
-        {/* <PrimaryBtn
+        {/* <Button
           variant={"Primary"}
           onClickHandler={() => {
             3 + 2;
           }}
         >
           hello
-        </PrimaryBtn>
-        <PrimaryBtn
+        </Button>
+        <Button
           variant={"Secondary"}
           onClickHandler={() => {
             3 + 2;
           }}
         >
           hello
-        </PrimaryBtn>
-        <PrimaryBtn
+        </Button>
+        <Button
           variant={"Tertiary"}
           onClickHandler={() => {
             3 + 2;
           }}
         >
           hello
-        </PrimaryBtn>
-        <PrimaryBtn
+        </Button>
+        <Button
           variant={"Destructive"}
           onClickHandler={() => {
             3 + 2;
           }}
         >
-          hello
-        </PrimaryBtn> */}
+          hello elahe
+        </Button> */}
         {/* <CheckBoxButton /> */}
         {/* <Checkbox /> */}
         {/* <p>سلام دنیا</p> */}
       </main>
       <footer className="w-full h-full">
-        <Footer />
+        {/* <FooterMobSize /> */}
+        <FooterDes />
       </footer>
     </div>
   );

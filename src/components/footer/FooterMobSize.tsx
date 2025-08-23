@@ -1,8 +1,12 @@
 import React from "react";
+
 import "./footer.css";
+
+import Button from "../button/Button";
+
 const Footer = () => {
   return (
-    <div className="w-full min-h-[100vh] max-h-[100vh] h-full flex flex-col justify-baseline items-start overflow-y-hidden">
+    <div className="w-full md:hidden min-h-[100vh] max-h-[100vh] h-full flex flex-col justify-baseline items-start overflow-y-hidden">
       <div className="footer-header w-full h-[84px] bg-white flex justify-between items-center p-[20px] rounded-[8px] gap-[96px]">
         <div className="h-[44px]">
           <svg
@@ -68,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full [] bg-[#311D35] py-[24px] px-[20px] pb-[46px]">
+      <div className="w-full bg-[#311D35] py-[24px] px-[20px] pb-[46px]">
         <div className="h-[44px] mb-[24px]">
           <svg
             width="88"
@@ -116,23 +120,33 @@ const Footer = () => {
           </svg>
         </div>
         <ul className="w-full text-white text-[12px] font-light list-disc list-inside flex flex-col justify-between gap-[12px] pb-[56px]">
-          <li>
-            <a>تماس با ما</a>
+          <li className="w-full h-[16px]">
+            <Button styles=" " variant="publicButton" className="">
+              تماس با ما
+            </Button>
           </li>
           <li>
-            <a>پشتیبانی و سوالات متداول</a>
+            <Button styles=" " variant="publicButton" className="">
+              پشتیبانی و سوالات متداول
+            </Button>
           </li>
           <li>
-            <a>درباره ما</a>
+            <Button styles=" " variant="publicButton" className="">
+              درباره ما
+            </Button>
           </li>
           <li>
-            <a>حریم خصوصی</a>
+            <Button styles=" " variant="publicButton" className="">
+              حریم خصوصی
+            </Button>
           </li>
           <li>
-            <a>قوانین استفاده</a>
+            <Button styles=" " variant="publicButton" className="">
+              قوانین استفاده
+            </Button>
           </li>
         </ul>
-        <div className="w-full flex flex-col justify-start gap-[28px] mt-[28px] mb-[28px] ">
+        <div className="w-full flex flex-col justify-start gap-[28px] mt-[28px] mb-[28px]">
           <div className="w-full h-[24px] flex justify-start items-center gap-[14px]">
             <p className="text-[16px] text-white font-semibold">
               دسته بندی پیشنهادی
@@ -172,11 +186,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <ul className="w-full h-[40px] text-white my-[28px] flex flex-col justify-between gap-[8px] border-t-[1px] border-[#EBEBEB] py-[28px] ">
+        <ul className="w-full h-[40px] text-white my-[28px] flex flex-col justify-between gap-[8px] border-t-[1px] border-[#EBEBEB] py-[28px]">
           <li className="text-[12px] font-light">تلفن پشتیبانی:</li>
-          <li className=" flex flex-row justify-start items-center gap-[8px]">
+          <li className="flex flex-row justify-start items-center gap-[8px]">
             <p className="text-[12px] font-light">پشتیبانی ۲۴ ساعته</p>
-            <p className=" text-[#EBEBEB]">|</p>
+            <p className="text-[#EBEBEB]">|</p>
             <p>۰۲۱-۴۵۶۱۲۰۹۵</p>
           </li>
         </ul>
