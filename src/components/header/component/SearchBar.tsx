@@ -108,7 +108,7 @@ const SearchBar = () => {
       </svg>
 
       <div
-        className={`absolute w-full mt-1 h-[400px] border-[1px] border-[#C3C3C3] rounded-[16px]  px-[4px] pr-[6px] overflow-auto bg-white shadow-lg z-50 top-[100px] right-[8px] left-[8px] ${
+        className={`absolute w-full mt-1 h-[400px] border-[1px] border-[#C3C3C3] rounded-[16px] px-[4px] pr-[6px] overflow-auto bg-white shadow-lg z-50 top-[100px] right-[8px] left-[8px] ${
           debounceSearch ? "block" : "hidden"
         }`}
       >

@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 
-import Header from "@/components/header/Header";
+import HeaderMob from "@/components/header/HeaderMob";
+import HeaderDes from "../components/header/HeaderDes";
 
 const vazirFont = localFont({
   src: "../font/Vazirmatn-Regular.ttf",
@@ -22,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="fa">
       <body className={`${vazirFont.className} antialiased`}>
-        <Header />
+        <HeaderDes />
+        <HeaderMob />
         {children}
       </body>
     </html>

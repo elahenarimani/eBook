@@ -1,10 +1,12 @@
 import React from "react";
+
 import "./header.css";
+
 import SearchBar from "./component/SearchBar";
 
-const Header = () => {
+const HeaderMob = () => {
   return (
-    <div className="header w-full h-[60px] sm:h-[160px] bg-white py-[16px] px-[20px] rounded-bl-[4px] rounded-br-[4px] sm:rounded-bl-[4px] sm:rounded-br-[4px] flex justify-between items-center gap-[15px] fixed sm:shadow-[0px_2px_8px_0px_#0000001F]">
+    <div className="header flex sm:hidden w-full h-[60px] bg-white sm:h-[150px] py-[16px] px-[20px] rounded-bl-[4px] rounded-br-[4px] justify-between items-center gap-[15px] fixed ">
       <div>
         <svg
           width="39"
@@ -85,4 +87,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMob;
