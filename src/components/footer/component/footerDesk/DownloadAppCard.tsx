@@ -3,7 +3,7 @@ import React from "react";
 const DownloadAppCard = () => {
   return (
     <div className="w-full h-full bg-white rounded-[8px] p-[24px]">
-      <div className="footer-header w-full h-[84px] bg-white flex justify-between items-center gap-[25px] mb-[24px] border-b-[1px] border-b-[#D7D7D7]">
+      <div className="w-full h-[44px] bg-white flex justify-between items-center gap-[25px] pb-[24px] border-b-[1px] border-b-[#D7D7D7]">
         <div className="h-[44px]">
           <svg
             width="88"
@@ -68,8 +68,20 @@ const DownloadAppCard = () => {
           </div>
         </div>
       </div>
-      <div className="">
+      <div className="mobile-v-link h-[76px] text-[#161616] flex flex-col justify-start items-start gap-[12px] my-[24px] ">
+        <p className=" text-[16px]">دانلود نسخه ی موبایل :</p>
+        <div className="flex flex-row justify-between">
+          <p className=" text-[12px] font-light">دریافت از:</p>
+          <p className=" text-[12px] font-light">دریافت از:</p>
         </div>
+      </div>
+      <div className="desktop-v-link h-[76px] text-[#161616] flex flex-col justify-start items-start gap-[12px] ">
+        <p className=" text-[16px]">دانلود نسخه ی دسکتاپ :</p>
+        <div className="flex flex-row justify-between">
+          <p className=" text-[12px] font-light">دریافت نسخه:</p>
+          <p className=" text-[12px] font-light">دریافت نسخه:</p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 import React from "react";
 
+import ContactLinks from "./component/footerDesk/ContactLinks";
 import DownloadAppCard from "./component/footerDesk/DownloadAppCard";
-import FooterCategory from "./component/footerDesk/FooterCategory";
+import SuggestedBooks from "./component/footerDesk/SuggestedBooks";
+import SuggestedCategories from "./component/footerDesk/SuggestedCategories";
 import Support from "./component/footerDesk/Support";
 
 const FooterDes = () => {
@@ -9,7 +11,11 @@ const FooterDes = () => {
     <div className="hidden sm:flex w-full h-[498] bg-[#311D35] py-[36px] px-[80px] flex-col justify-start items-center gap-[24px]">
       <div className="w-full h-[388px] flex flex-row justify-between items-start">
         <div className="w-full h-full">
-          <FooterCategory />
+          <div className="w-full h-full flex flex-row justify-start items-start gap-[80px]">
+            <ContactLinks />
+            <SuggestedCategories />
+            <SuggestedBooks />
+          </div>
         </div>
         <div className="w-[324px] h-[316px]">
           <DownloadAppCard />

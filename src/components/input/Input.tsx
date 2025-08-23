@@ -6,7 +6,7 @@ interface inputProps {
   name?: string;
   className?: string;
   placeholder?: string;
-  onChange?: () => void;
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   maxLength?: number;
   minLength?: number;
   checked?: boolean;
@@ -19,7 +19,7 @@ const Input = ({
   name,
   className,
   placeholder,
-  onChange,
+  handleChange,
   maxLength,
   minLength,
   checked,
@@ -34,7 +34,7 @@ const Input = ({
         name={name}
         className={className}
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={handleChange}
         minLength={minLength}
         maxLength={maxLength}
         checked={checked}
