@@ -3,17 +3,17 @@ import React from "react";
 const Support = () => {
   return (
     <div className="w-full h-full flex flex-row justify-between items-center">
-      <ul className="h-[40px] text-white my-[28px] flex flex-col justify-between gap-[8px]  ">
+      <ul className="h-[40px] text-white my-[28px] flex flex-col justify-between gap-[8px]">
         <li className="text-[12px] font-light">تلفن پشتیبانی:</li>
         <li className="flex flex-row justify-start items-center gap-[8px]">
           <p className="text-[12px] font-light">پشتیبانی ۲۴ ساعته</p>
           <p className="text-[#EBEBEB]">|</p>
-          <p>۰۲۱-۴۵۶۱۲۰۹۵</p>
+          <p className="text-[12px] font-light">۰۲۱-۴۵۶۱۲۰۹۵</p>
         </li>
       </ul>
       <div className="flex justify-start items-center gap-[87px] text-white">
-        <p className="font-light text-[12px] ">کنج در شبکه های اجتماعی:</p>
-        <div className=" h-full flex justify-between gap-[12px]">
+        <p className="font-light text-[12px]">کنج در شبکه های اجتماعی:</p>
+        <div className="h-full flex justify-between gap-[12px]">
           <div>
             {" "}
             <svg

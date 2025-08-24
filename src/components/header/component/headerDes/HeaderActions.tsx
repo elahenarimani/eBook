@@ -1,16 +1,16 @@
 import React from "react";
 
-import "./header.css";
+import SearchBar from "../SearchBar";
 
-import SearchBar from "./component/SearchBar";
+import Button from "@/components/button/Button";
 
-const HeaderMob = () => {
+const HeaderActions = () => {
   return (
-    <div className="header flex sm:hidden w-full h-[60px] bg-white sm:h-[150px] py-[16px] px-[20px] rounded-bl-[4px] rounded-br-[4px] justify-between items-center gap-[15px] sticky z-10">
+    <div className="flex flex-row w-full h-[50px] justify-between items-center">
       <div>
         <svg
-          width="39"
-          height="18"
+          width="88"
+          height="50"
           viewBox="0 0 39 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -53,13 +53,32 @@ const HeaderMob = () => {
           />
         </svg>
       </div>
-      <div className="w-[253px] h-[28px]">
+      <div className="w-[817px] h-[50px]">
         <SearchBar />
       </div>
-      <div className="w-[28px] h-[28px] rounded-[8px] border-[1px] border-[#C3C3C3] p-[4px] flex justify-center items-center text-primary relative">
+      <Button variant="Secondary">
+        <div className="w-[131px] h-full text-[#744D7E] flex justify-between items-center">
+          <p className="text-[16px] truncate">کتابخانه من</p>
+          <div className="w-[20px] h-[20px]">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.4221 15.7759L15.685 2.62531C15.6496 2.45334 15.5809 2.29013 15.4829 2.14506C15.3849 1.99999 15.2595 1.87592 15.1139 1.77997C14.9683 1.68402 14.8054 1.61809 14.6345 1.58597C14.4636 1.55384 14.2881 1.55615 14.1181 1.59277L10.2578 2.43114C9.91634 2.50669 9.61822 2.71543 9.42826 3.01195C9.2383 3.30847 9.17189 3.66879 9.24345 4.01454L11.9805 17.1651C12.0415 17.4651 12.2029 17.7348 12.4375 17.9287C12.6721 18.1227 12.9656 18.2291 13.2687 18.2301C13.3624 18.23 13.4558 18.22 13.5474 18.2001L17.4077 17.3618C17.7496 17.286 18.048 17.0769 18.238 16.7799C18.428 16.4828 18.4941 16.122 18.4221 15.7759ZM10.5341 3.74203C10.5341 3.73703 10.5341 3.73453 10.5341 3.73453L14.3935 2.90116L14.6682 4.22371L10.8087 5.06292L10.5341 3.74203ZM11.08 6.36464L14.9411 5.5271L15.2166 6.85216L11.3587 7.69053L11.08 6.36464ZM11.6276 8.99558L15.4887 8.15722L16.5855 13.4274L12.7244 14.2658L11.6276 8.99558ZM17.1315 16.0584L13.272 16.8918L12.9974 15.5692L16.8568 14.73L17.1315 16.0509C17.1315 16.0559 17.1315 16.0584 17.1315 16.0584ZM7.89511 2.22946H3.93667C3.58672 2.22946 3.2511 2.36994 3.00365 2.62C2.7562 2.87006 2.61719 3.20922 2.61719 3.56285V16.8968C2.61719 17.2504 2.7562 17.5895 3.00365 17.8396C3.2511 18.0897 3.58672 18.2301 3.93667 18.2301H7.89511C8.24505 18.2301 8.58067 18.0897 8.82812 17.8396C9.07557 17.5895 9.21459 17.2504 9.21459 16.8968V3.56285C9.21459 3.20922 9.07557 2.87006 8.82812 2.62C8.58067 2.36994 8.24505 2.22946 7.89511 2.22946ZM3.93667 3.56285H7.89511V4.89624H3.93667V3.56285ZM3.93667 6.22963H7.89511V14.23H3.93667V6.22963ZM7.89511 16.8968H3.93667V15.5634H7.89511V16.8968Z"
+                fill="#744D7E"
+              />
+            </svg>
+          </div>
+        </div>
+      </Button>
+      <div className="w-[48px] h-[48px] rounded-[8px] border-[1px] border-[#C3C3C3] p-[4px] flex justify-center items-center text-primary relative">
         <svg
-          width="16"
-          height="16"
+          width="32"
+          height="32"
           viewBox="0 0 16 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -79,12 +98,37 @@ const HeaderMob = () => {
             fill="#744D7E"
           />
         </svg>
-        <p className="w-[12px] h-[12px] rounded-[100px] bg-[#FF2E3C] absolute z-10 top-[-7px] right-[-4px] text-white text-[10px] flex justify-center items-center font-light pt-[1px]">
+        <p className="w-[16px] h-[16px] rounded-[100px] bg-[#FF2E3C] absolute z-10 top-[-7px] right-[-4px] text-white text-[10px] flex justify-center items-center font-light pt-[3px]">
           3
         </p>
       </div>
+      <Button variant="Primary">
+        <div className="w-[146px] h-full text-white flex justify-between items-center">
+          <div className="w-[20px] h-[20px]">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M10.4167 1.66699C7.72505 1.66699 5.54299 3.66263 5.54299 6.12436C5.54299 8.58609 7.72505 10.5817 10.4167 10.5817C13.1084 10.5817 15.2905 8.58609 15.2905 6.12436C15.2905 3.66262 13.1084 1.66699 10.4167 1.66699ZM6.81441 6.12436C6.81441 4.30482 8.42723 2.82978 10.4167 2.82978C12.4062 2.82978 14.0191 4.30482 14.0191 6.12436C14.0191 7.9439 12.4062 9.41893 10.4167 9.41893C8.42723 9.41893 6.81441 7.9439 6.81441 6.12436Z"
+                fill="white"
+              />
+              <path
+                d="M10.4167 11.7445C6.17619 11.7445 2.5 14.3252 2.5 17.7523C2.5 18.0734 2.78462 18.3337 3.13571 18.3337C3.4868 18.3337 3.77141 18.0734 3.77141 17.7523C3.77141 15.1793 6.62182 12.9073 10.4167 12.9073C14.2115 12.9073 17.0619 15.1793 17.0619 17.7523C17.0619 18.0734 17.3465 18.3337 17.6976 18.3337C18.0487 18.3337 18.3333 18.0734 18.3333 17.7523C18.3333 14.3252 14.6571 11.7445 10.4167 11.7445Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <p className="text-[16px] truncate">ورود /ثبت نام</p>
+        </div>
+      </Button>
     </div>
   );
 };
 
-export default HeaderMob;
+export default HeaderActions;

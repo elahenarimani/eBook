@@ -5,7 +5,7 @@ import Button from "@/components/button/Button";
 const SuggestedBooks = () => {
   return (
     <div className="w-full h-full">
-      <div className="w-[146px] mb-[24px]">
+      <div className="w-full mb-[24px]">
         <p className="text-[16px] text-white"> کتاب های پیشنهادی</p>
       </div>
       <ul className="w-[122px] text-white text-[12px] font-light list-disc list-inside flex flex-col justify-between gap-[12px] pb-[56px]">

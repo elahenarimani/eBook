@@ -3,8 +3,9 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 
-import HeaderMob from "@/components/header/HeaderMob";
 import HeaderDes from "../components/header/HeaderDes";
+
+import HeaderMob from "@/components/header/HeaderMob";
 
 const vazirFont = localFont({
   src: "../font/Vazirmatn-Regular.ttf",

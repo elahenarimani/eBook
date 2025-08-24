@@ -121,7 +121,7 @@ export default function CategoriesSection() {
         <li className="flex flex-row justify-start items-center gap-[8px]">
           <p className="text-[12px] font-light">پشتیبانی ۲۴ ساعته</p>
           <p className="text-[#EBEBEB]">|</p>
-          <p>۰۲۱-۴۵۶۱۲۰۹۵</p>
+          <p className="text-[12px] font-light">۰۲۱-۴۵۶۱۲۰۹۵</p>
         </li>
       </ul>
       <div className="pt-[28px] flex justify-start items-center gap-[12px] text-white">
