@@ -22,8 +22,7 @@ const SearchBar = () => {
   const searchResult: Book[] = debounceSearch
     ? books.filter(
         (book) =>
-          // book.tags.some((tag) => tag.includes(debounceSearch)) ||
-          book.tags.includes(debounceSearch) ||
+          book.tags.some((tag) => tag.includes(debounceSearch)) ||
           book.title.includes(debounceSearch),
       )
     : [];
@@ -31,7 +30,7 @@ const SearchBar = () => {
     <div className="w-full h-full border-[1px] border-[#C3C3C3] rounded-[8px] px-[4px] pr-[6px] pl-[10px] flex justify-between items-center">
       <Input
         placeholder="جستجو در کنج"
-        ariaLabel="searching"
+        aria-label="searching"
         className="w-full h-full outline-none"
         type="text"
         handleChange={(e: React.ChangeEvent<HTMLInputElement>) =>
