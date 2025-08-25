@@ -22,7 +22,8 @@ const SearchBar = () => {
   const searchResult: Book[] = debounceSearch
     ? books.filter(
         (book) =>
-          book.tags.some((tag) => tag.includes(debounceSearch)) ||
+          // book.tags.some((tag) => tag.includes(debounceSearch)) ||
+          book.tags.includes(debounceSearch) ||
           book.title.includes(debounceSearch),
       )
     : [];

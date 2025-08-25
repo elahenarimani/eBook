@@ -2,7 +2,8 @@
 // import Button from "@/components/button/Button";
 import FooterDes from "../components/footer/FooterDes";
 
-import BookCardVer from "@/components/bookCard/BookCardVer";
+// import BookCardVer from "@/components/bookCard/BookCardVer";
+import BookCarousel from "@/components/bookCarousel/BookCarousel";
 import FooterMobSize from "@/components/footer/FooterMobSize";
 
 // import CheckBoxButton, { Checkbox } from "../components/checkBox/CheckBox";
@@ -51,9 +52,12 @@ export default function Home() {
         {/* <CheckBoxButton /> */}
         {/* <Checkbox /> */}
         {/* <p>سلام دنیا</p> */}
+        {/* <BookCardVer />
         <BookCardVer />
-        <BookCardVer />
-        <BookCardVer />
+        <BookCardVer /> */}
+        <div className="p-[80px]">
+          <BookCarousel />
+        </div>
       </main>
       <footer className="w-full h-full">
         <FooterMobSize />
