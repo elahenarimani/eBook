@@ -1,9 +1,10 @@
 // "use client";
 // import Button from "@/components/button/Button";
 import FooterDes from "../components/footer/FooterDes";
-// import FilterTextBooks from "@/components/main/components/sidbarFilters/Filter";
-import Filter from "../components/main/components/sidbarFilters/Filter";
+import AuthorPublisherFilter from "../components/main/components/sidbarFilters/AuthorPublisherFilter";
 
+// import FilterText from "../components/main/components/sidbarFilters/FilterText";
+// import FilterTextBooks from "@/components/main/components/sidbarFilters/Filter";
 // import BookCardVer from "@/components/bookCard/BookCardVer";
 import BookCarousel from "@/components/bookCarousel/BookCarousel";
 import FooterMobSize from "@/components/footer/FooterMobSize";
@@ -15,8 +16,27 @@ import ContentType from "@/components/main/components/sidbarFilters/ContentType"
 // import CheckBox from "@/components/checkBox/CheckBox";
 
 // import PrimaryBtn from "../components/button/PrimaryBtn";
-
+interface FilterType {
+  name: string;
+  id: number;
+}
 export default function Home() {
+  const publisherData: FilterType[] = [
+    { id: 1, name: "انتشارات 360 درجه" },
+    { id: 2, name: "انتشارات جنگل" },
+    { id: 3, name: "نشر چشمه" },
+    { id: 4, name: "دنیای اقتصاد" },
+    { id: 5, name: "انتشارات ایران" },
+    { id: 6, name: "نشر افق" },
+  ];
+  const authorData: FilterType[] = [
+    { id: 1, name: "Elif Shafak" },
+    { id: 2, name: "Gabor Mate" },
+    { id: 3, name: "Matt Haig" },
+    { id: 4, name: "James Clear" },
+    { id: 5, name: "Irvin D. Yalom" },
+    { id: 6, name: "Darren Hardy" },
+  ];
   return (
     <div>
       <main>
@@ -58,13 +78,20 @@ export default function Home() {
         {/* <BookCardVer />
         <BookCardVer />
         <BookCardVer /> */}
+        <div style={{ fontFamily: "Vazirmatn" }}>0123456789 ۱۲۳۴۵۶۷۸۹</div>
         <div className="p-[80px]">
           <BookCarousel />
         </div>
         <ContentType />
         {/* <FilterTextBooks />
         <FilterTextBooks /> */}
-        <Filter />
+        {/* <FilterText /> */}
+        {/* <PublisherFilter /> */}
+        <AuthorPublisherFilter title="ناشر" options={publisherData} />
+        <AuthorPublisherFilter
+          title="نویسنده، مترجم یا راوی"
+          options={authorData}
+        />
       </main>
       <footer className="w-full h-full">
         <FooterMobSize />

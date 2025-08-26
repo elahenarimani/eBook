@@ -1,7 +1,5 @@
-
-
 @import "tailwindcss/preflight";
-@tailwind utilities; 
+@tailwind utilities;
 @import "tailwindcss";
 :root {
   --background: #ffffff;
@@ -13,7 +11,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-   --color-primary: #744D7E;
+  --color-primary: #744d7e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,15 +21,28 @@
   }
 }
 
-
-body,html{
+body,
+html {
   width: 100%;
   min-height: 100vh;
   box-sizing: border-box;
+  font-family: Vazirmatn, sans-serif;
   direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: right;
+  font-family: Vazirmatn, sans-serif;
+  font-feature-settings: "ss01";
+  unicode-bidi: bidi-override;
+  font-variant-numeric: normal;
 }
 
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
+  font-variant-numeric: normal;
+  font-feature-settings: "locl";
+}
+:lang(fa) {
+  font-family: Vazirmatn, sans-serif;
+  font-feature-settings: "locl";
 }

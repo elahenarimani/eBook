@@ -64,6 +64,7 @@ export interface Book {
   title: string;
   name?: string;
   author: string;
+  authorEn: string;
   publisher?: string;
   image?: string;
   rating?: number;
