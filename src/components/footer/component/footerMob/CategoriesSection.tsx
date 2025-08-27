@@ -2,7 +2,7 @@ import Button from "../../../button/Button";
 
 export default function CategoriesSection() {
   return (
-    <div className="w-full bg-[#311D35] py-[24px] px-[20px] pb-[46px]">
+    <div className="sm:hidden w-full bg-[#311D35] py-[24px] px-[20px] pb-[46px]">
       <div className="h-[44px] mb-[24px]">
         <svg
           width="88"

@@ -1,7 +1,7 @@
 import React from "react";
 
 import SearchBarFilter from "./components/searchBar/SearchBarFilter";
-import Checkbox from "../../../checkBox/CheckBox";
+import Checkbox from "../../../../checkBox/CheckBox";
 
 interface FilterOption {
   id: number;

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import Input from "../../../../../input/Input";
+import Input from "../../../../../../input/Input";
 
 import { books } from "@/data/books";
 import { Book } from "@/type/book";
@@ -23,7 +23,7 @@ const SearchBarFilter = () => {
     ? books.filter(
         (book) =>
           book.tags.some((tag) => tag.includes(debounceSearchFilter)) ||
-          book.title.includes(debounceSearchFilter)
+          book.title.includes(debounceSearchFilter),
       )
     : [];
   return (
@@ -35,7 +35,7 @@ const SearchBarFilter = () => {
           setSearchFilter(e.target.value)
         }
         value={searchّFilter}
-        ariaLabel="search"
+        aria-label="searching"
       />
       <div className="w-[20px] h-[20px]">
         <svg

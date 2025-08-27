@@ -29,7 +29,8 @@ const BookInfoSection = () => {
       <div className="w-full flex flex-row justify-between items-center text-[12px] gap-[8px] sm:text-[14px]">
         <p className="product-discount line-through text-[#9D9D9D]">116,000</p>
         <p className="product-price w-full flex-row justify-between items-center gap-[4px]">
-          116,000 <span className="currency text-[#8A8A8A]">تومان</span>
+          116,000{" "}
+          <span className="currency text-[#8A8A8A] sm:hidden">تومان</span>
         </p>
       </div>
     </div>

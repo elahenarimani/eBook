@@ -1,14 +1,23 @@
 // "use client";
 // import Button from "@/components/button/Button";
-import FooterDes from "../components/footer/FooterDes";
-import AuthorPublisherFilter from "../components/main/components/sidbarFilters/AuthorPublisherFilter";
 
+import FooterDes from "../components/footer/FooterDes";
+
+// import BookCardVer from "@/components/bookCard/BookCardVer";
 // import FilterText from "../components/main/components/sidbarFilters/FilterText";
 // import FilterTextBooks from "@/components/main/components/sidbarFilters/Filter";
 // import BookCardVer from "@/components/bookCard/BookCardVer";
-import BookCarousel from "@/components/bookCarousel/BookCarousel";
+// import BookCarousel from "@/components/bookCarousel/BookCarousel";
 import FooterMobSize from "@/components/footer/FooterMobSize";
-import ContentType from "@/components/main/components/sidbarFilters/ContentType";
+// import ProductSorting from "@/components/main/components/modalFilterMob/ProductSorting";
+// import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
+import NavigationBar from "@/components/main/components/navigationBar/NavigationBar";
+import FilterMob from "@/components/main/components/filters/mobileFilters/FilterMob";
+import ModalSorting from "@/components/main/components/filters/mobileFilters/ModalSorting";
+import FilterTextBooks from "@/components/main/components/filters/desktopFilters/components/filterText/FilterTextBooks";
+import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
+import AuthorPublisherFilter from "@/components/main/components/filters/desktopFilters/AuthorPublisherFilter";
+// import ContentType from "@/components/main/components/sidbarFilters/ContentType";
 
 // import CheckBoxButton, { Checkbox } from "../components/checkBox/CheckBox";
 
@@ -38,9 +47,13 @@ export default function Home() {
     { id: 6, name: "Darren Hardy" },
   ];
   return (
-    <div>
-      <main>
-        {/* <Button
+    <div className="w-full h-full">
+      <main className="!max-w-[390px] mx-auto sm:w-full sm:mx-0">
+        <div>
+          <FilterMob />
+          <ModalSorting />
+          {/* <Breadcrumb /> */}
+          {/* <Button
           variant={"Primary"}
           onClickHandler={() => {
             3 + 2;
@@ -72,30 +85,36 @@ export default function Home() {
         >
           hello elahe
         </Button> */}
-        {/* <CheckBoxButton /> */}
-        {/* <Checkbox /> */}
-        {/* <p>سلام دنیا</p> */}
-        {/* <BookCardVer />
-        <BookCardVer />
+          {/* <CheckBoxButton /> */}
+          {/* <Checkbox /> */}
+          {/* <p>سلام دنیا</p> */}
+          {/* <BookCardVer />
+        // <BookCardVer />
         <BookCardVer /> */}
-        <div style={{ fontFamily: "Vazirmatn" }}>0123456789 ۱۲۳۴۵۶۷۸۹</div>
-        <div className="p-[80px]">
+          {/* <BookCardVer /> */}
+          {/* <ProductSorting /> */}
+          {/* <div style={{ fontFamily: "Vazirmatn" }}>0123456789 ۱۲۳۴۵۶۷۸۹</div> */}
+          {/* <div>
           <BookCarousel />
+        </div> */}
+          {/* <ContentType /> */}
+          {/* {/* <FilterTextBooks /> */}
+          {/* <FilterTextBooks /> */}
+          <FilterText />
+          {/* <PublisherFilter /> */}
+          <AuthorPublisherFilter title="ناشر" options={publisherData} />
+          <AuthorPublisherFilter
+            title="نویسنده، مترجم یا راوی"
+            options={authorData}
+          />
         </div>
-        <ContentType />
-        {/* <FilterTextBooks />
-        <FilterTextBooks /> */}
-        {/* <FilterText /> */}
-        {/* <PublisherFilter /> */}
-        <AuthorPublisherFilter title="ناشر" options={publisherData} />
-        <AuthorPublisherFilter
-          title="نویسنده، مترجم یا راوی"
-          options={authorData}
-        />
       </main>
       <footer className="w-full h-full">
-        <FooterMobSize />
         <FooterDes />
+        <div className="!max-w-[390px] !mx-auto sm:w-full sm:mx-0">
+          <FooterMobSize />
+          <NavigationBar />
+        </div>
       </footer>
     </div>
   );

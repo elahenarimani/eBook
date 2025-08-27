@@ -35,27 +35,44 @@ const FilterText = () => {
   const foreignRef = useRef<HTMLDivElement>(null);
 
   // تابع مشترک برای بستن منوها با کلیک خارج
-  const useOutsideClick = (
-    ref: React.RefObject<HTMLDivElement | null>,
-    close: () => void,
-  ) => {
+  // const useOutsideClick = (
+  //   ref: React.RefObject<HTMLDivElement | null>,
+  //   close: () => void,
+  // ) => {
+  //   useEffect(() => {
+  //     const handleClickOutside = (event: MouseEvent) => {
+  //       if (ref.current && !ref.current.contains(event.target as Node)) {
+  //         close();
+  //       }
+  //     };
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //     return () => {
+  //       document.removeEventListener("mousedown", handleClickOutside);
+  //     };
+  //   }, [ref, close]);
+  // };
+  const useOutsideClick = (close: () => void) => {
     useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (ref.current && !ref.current.contains(event.target as Node)) {
-          close();
-        }
+      const handleClick = () => {
+        close(); // هر کلیک روی صفحه باعث بسته شدن میشه
       };
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClick);
       return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("mousedown", handleClick);
       };
-    }, [ref, close]);
+    }, [close]);
   };
 
   // فعال کردن hook برای هر منو
-  useOutsideClick(textBooksRef, () => setIsTextBooksOpen(false));
-  useOutsideClick(storiesRef, () => setIsStoriesOpen(false));
-  useOutsideClick(foreignRef, () => setIsForeignStoriesOpen(false));
+  useOutsideClick(() => {
+    if (isTextBooksOpen) setIsTextBooksOpen(false);
+  });
+  useOutsideClick(() => {
+    if (isStoriesOpen) setIsStoriesOpen(false);
+  });
+  useOutsideClick(() => {
+    if (isForeignStoriesOpen) setIsForeignStoriesOpen(false);
+  });
   return (
     <div
       className="w-[304px] h-[240px] bg-white border-[1px] border-[#EBEBEB] p-[16px] rounded-[4px] flex flex-col relative"

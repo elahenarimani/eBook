@@ -2,7 +2,7 @@ import React from "react";
 
 const DownloadAppCard = () => {
   return (
-    <div className="w-full h-full bg-white rounded-[8px] p-[24px]">
+    <div className="hidden sm:block w-full h-full bg-white rounded-[8px] p-[24px]">
       <div className="w-full h-[44px] bg-white flex justify-between items-center gap-[25px] pb-[24px] border-b-[1px] border-b-[#D7D7D7]">
         <div className="h-[44px]">
           <svg

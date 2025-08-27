@@ -11,7 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 const BookCarousel = () => {
   return (
-    <div className="w-full h-[427px] relative text-center max-w-[1280px] mx-auto">
+    <div className="w-[370px] h-[378px] sm:w-full sm:h-[427px] relative text-center max-w-[1280px] mx-auto">
       <div className="custom-button !w-full !h-[37] flex flex-row justify-between items-center gap-[100px]">
         <div className="custom-prev-btn !w-[36px] !h-[36px] bg-white rounded-[100px] absolute top-1/2 -translate-y-1/2 z-10000 left-[-18px] flex justify-center items-center">
           <svg
@@ -51,7 +51,7 @@ const BookCarousel = () => {
         className="mySwiper w-full h-full"
         breakpoints={{
           320: {
-            slidesPerView: 1, // xs
+            slidesPerView: 2, // xs
           },
           640: {
             slidesPerView: 2, // sm
