@@ -27,7 +27,7 @@ const SearchBarFilter = () => {
       )
     : [];
   return (
-    <div className="w-full h-full flex flex-row justify-between items-center gap-[4px] px-[8px] py-[4px] ">
+    <div className="w-full h-full flex flex-row justify-between items-center gap-[4px] px-[8px] py-[4px]">
       <Input
         placeholder="جستجو"
         className="w-full h-full text-[12px] font-light placeholder-text-[#8A8A8A] outline-none"
@@ -55,7 +55,7 @@ const SearchBarFilter = () => {
       </div>
 
       <div
-        className={`absolute w-full mt-1 h-[400px] border-[1px] border-[#C3C3C3] rounded-[16px] px-[4px] pr-[6px] overflow-auto bg-white shadow-lg z-50 top-[100px] right-[8px] left-[8px] ${
+        className={`sm:hidden absolute w-full mt-1 h-[400px] border-[1px] border-[#C3C3C3] rounded-[16px] px-[4px] pr-[6px] overflow-auto bg-white shadow-lg z-50 top-[100px] right-[8px] left-[8px] ${
           debounceSearchFilter ? "block" : "hidden"
         }`}
       >

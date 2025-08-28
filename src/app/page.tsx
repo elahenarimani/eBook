@@ -15,8 +15,9 @@ import NavigationBar from "@/components/main/components/navigationBar/Navigation
 import FilterMob from "@/components/main/components/filters/mobileFilters/FilterMob";
 // import ModalSorting from "@/components/main/components/filters/mobileFilters/ModalSorting";
 // import FilterTextBooks from "@/components/main/components/filters/desktopFilters/components/filterText/FilterTextBooks";
-import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
-import AuthorPublisherFilter from "@/components/main/components/filters/desktopFilters/AuthorPublisherFilter";
+// import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
+// import AuthorPublisherFilter from "@/components/main/components/filters/desktopFilters/AuthorPublisherFilter";
+// import AuthorPublisherModal from "@/components/main/components/filters/mobileFilters/modal/AuthorPublisherModal";
 // import ContentType from "@/components/main/components/sidbarFilters/ContentType";
 
 // import CheckBoxButton, { Checkbox } from "../components/checkBox/CheckBox";
@@ -25,29 +26,29 @@ import AuthorPublisherFilter from "@/components/main/components/filters/desktopF
 // import CheckBox from "@/components/checkBox/CheckBox";
 
 // import PrimaryBtn from "../components/button/PrimaryBtn";
-interface FilterType {
-  name: string;
-  id: number;
-}
+// interface FilterType {
+//   name: string;
+//   id: number;
+// }
 export default function Home() {
-  const publisherData: FilterType[] = [
-    { id: 1, name: "انتشارات 360 درجه" },
-    { id: 2, name: "انتشارات جنگل" },
-    { id: 3, name: "نشر چشمه" },
-    { id: 4, name: "دنیای اقتصاد" },
-    { id: 5, name: "انتشارات ایران" },
-    { id: 6, name: "نشر افق" },
-  ];
-  const authorData: FilterType[] = [
-    { id: 1, name: "Elif Shafak" },
-    { id: 2, name: "Gabor Mate" },
-    { id: 3, name: "Matt Haig" },
-    { id: 4, name: "James Clear" },
-    { id: 5, name: "Irvin D. Yalom" },
-    { id: 6, name: "Darren Hardy" },
-  ];
+  // const publisherData: FilterType[] = [
+  //   { id: 1, name: "انتشارات 360 درجه" },
+  //   { id: 2, name: "انتشارات جنگل" },
+  //   { id: 3, name: "نشر چشمه" },
+  //   { id: 4, name: "دنیای اقتصاد" },
+  //   { id: 5, name: "انتشارات ایران" },
+  //   { id: 6, name: "نشر افق" },
+  // ];
+  // const authorData: FilterType[] = [
+  //   { id: 1, name: "Elif Shafak" },
+  //   { id: 2, name: "Gabor Mate" },
+  //   { id: 3, name: "Matt Haig" },
+  //   { id: 4, name: "James Clear" },
+  //   { id: 5, name: "Irvin D. Yalom" },
+  //   { id: 6, name: "Darren Hardy" },
+  // ];
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full bg-[#F5F6F8]">
       <main className="!max-w-[390px] mx-auto sm:w-full sm:mx-0">
         <div>
           <FilterMob />
@@ -100,13 +101,17 @@ export default function Home() {
           {/* <ContentType /> */}
           {/* {/* <FilterTextBooks /> */}
           {/* <FilterTextBooks /> */}
-          <FilterText />
+          {/* <FilterText /> */}
           {/* <PublisherFilter /> */}
-          <AuthorPublisherFilter title="ناشر" options={publisherData} />
+          {/* <AuthorPublisherFilter title="ناشر" options={publisherData} />
           <AuthorPublisherFilter
             title="نویسنده، مترجم یا راوی"
             options={authorData}
-          />
+          /> */}
+          {/* <AuthorPublisherModal
+            title="نویسنده، مترجم یا راوی"
+            options={authorData}
+          /> */}
         </div>
       </main>
       <footer className="w-full h-full">

@@ -1,20 +1,89 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
-import ModalSorting from "./ModalSorting";
+// import ModalBookFilter from "./modal/ModalBookFilter";
 
+// import ModalSorting from "./modal/ModalSorting";
 import Button from "@/components/button/Button";
+// import ContentType from "./modal/ContentType";
+// import AuthorPublisherModal from "./modal/AuthorPublisherModal";
 
 const FilterMob = () => {
-  const [showModal, setShowModal] = useState<boolean>(false);
+  // const [showModal, setShowModal] = useState<boolean>(false);
+  // const [showModalFilter, setShowModalFilter] = useState<boolean>(false);
+  // const [showContentModal, setShowContentModal] = useState<boolean>(false);
+  // const [showAuthorModal, setShowAuthorModal] = useState<boolean>(false);
   return (
-    <div className="w-full !h-[32px] sm:hidden rounded-[8px] py-[8px] px-[12px]">
-      <div className="!max-w-[350px] h-full !mx-auto flex justify-between items-center gap-[169px]">
+    <div className="!w-[390px] !h-[32px] sm:hidden rounded-[8px] py-[8px] px-[12px]">
+      <div className="!max-w-[350px] min-w-[350px] h-full !mx-auto flex justify-between items-center">
         <div className="h-full flex justify-start items-center">
-          <Button
+          {/* <Button
             className="w-full h-full flex justify-start items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB] pr-0"
             variant="publicButton"
             onClickHandler={() => setShowModal(true)}
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M2.29821 0.332465H11.7083V0.339125C12.5013 0.325275 13.2215 0.80106 13.5224 1.5375C13.8233 2.27394 13.6432 3.1202 13.0687 3.66899L9.90326 6.84569C9.5509 7.19991 9.34877 7.67721 9.33918 8.17764V11.1079C9.33814 11.7156 9.05317 12.2876 8.56939 12.653L7.7465 13.2723C7.16458 13.7167 6.38148 13.7903 5.72744 13.4622C5.07339 13.134 4.66222 12.4611 4.66732 11.7273V8.17764C4.65774 7.67721 4.45561 7.19991 4.10325 6.84569L0.937792 3.66899C0.358291 3.12102 0.174884 2.27149 0.476419 1.53196C0.777953 0.792418 1.50216 0.315591 2.29821 0.332465ZM12.571 1.91082C12.4278 1.55944 12.0866 1.33029 11.7083 1.33143H2.29821C1.91992 1.33029 1.57871 1.55944 1.4355 1.91082C1.28767 2.2605 1.36942 2.66542 1.64123 2.92976L4.81995 6.10646C5.37014 6.65397 5.67852 7.40006 5.67602 8.17764V11.7273C5.67247 11.9728 5.76627 12.2097 5.93678 12.3858C6.10728 12.5619 6.34052 12.6628 6.58517 12.6663C6.7851 12.6654 6.97899 12.5974 7.13597 12.4732L7.95886 11.8538C8.1928 11.6777 8.33049 11.4014 8.33049 11.1079V8.17764C8.33149 7.39813 8.64476 6.65176 9.19982 6.10646L12.3653 2.92976C12.6371 2.66542 12.7188 2.2605 12.571 1.91082Z"
+                fill="#787878"
+              />
+            </svg>
+            <span className="text-[12px] font-light text-[#787878]">فیلتر</span>
+          </Button> */}
+          {/* <Button
+            className="w-full h-full flex justify-start items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB] pr-0"
+            variant="publicButton"
+            onClickHandler={() => setShowModalFilter(true)}
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M2.29821 0.332465H11.7083V0.339125C12.5013 0.325275 13.2215 0.80106 13.5224 1.5375C13.8233 2.27394 13.6432 3.1202 13.0687 3.66899L9.90326 6.84569C9.5509 7.19991 9.34877 7.67721 9.33918 8.17764V11.1079C9.33814 11.7156 9.05317 12.2876 8.56939 12.653L7.7465 13.2723C7.16458 13.7167 6.38148 13.7903 5.72744 13.4622C5.07339 13.134 4.66222 12.4611 4.66732 11.7273V8.17764C4.65774 7.67721 4.45561 7.19991 4.10325 6.84569L0.937792 3.66899C0.358291 3.12102 0.174884 2.27149 0.476419 1.53196C0.777953 0.792418 1.50216 0.315591 2.29821 0.332465ZM12.571 1.91082C12.4278 1.55944 12.0866 1.33029 11.7083 1.33143H2.29821C1.91992 1.33029 1.57871 1.55944 1.4355 1.91082C1.28767 2.2605 1.36942 2.66542 1.64123 2.92976L4.81995 6.10646C5.37014 6.65397 5.67852 7.40006 5.67602 8.17764V11.7273C5.67247 11.9728 5.76627 12.2097 5.93678 12.3858C6.10728 12.5619 6.34052 12.6628 6.58517 12.6663C6.7851 12.6654 6.97899 12.5974 7.13597 12.4732L7.95886 11.8538C8.1928 11.6777 8.33049 11.4014 8.33049 11.1079V8.17764C8.33149 7.39813 8.64476 6.65176 9.19982 6.10646L12.3653 2.92976C12.6371 2.66542 12.7188 2.2605 12.571 1.91082Z"
+                fill="#787878"
+              />
+            </svg>
+            <span className="text-[12px] font-light text-[#787878]">فیلتر</span>
+          </Button> */}
+          {/* <Button
+            className="w-full h-full flex justify-start items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB] pr-0"
+            variant="publicButton"
+            onClickHandler={() => setShowContentModal(true)}
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M2.29821 0.332465H11.7083V0.339125C12.5013 0.325275 13.2215 0.80106 13.5224 1.5375C13.8233 2.27394 13.6432 3.1202 13.0687 3.66899L9.90326 6.84569C9.5509 7.19991 9.34877 7.67721 9.33918 8.17764V11.1079C9.33814 11.7156 9.05317 12.2876 8.56939 12.653L7.7465 13.2723C7.16458 13.7167 6.38148 13.7903 5.72744 13.4622C5.07339 13.134 4.66222 12.4611 4.66732 11.7273V8.17764C4.65774 7.67721 4.45561 7.19991 4.10325 6.84569L0.937792 3.66899C0.358291 3.12102 0.174884 2.27149 0.476419 1.53196C0.777953 0.792418 1.50216 0.315591 2.29821 0.332465ZM12.571 1.91082C12.4278 1.55944 12.0866 1.33029 11.7083 1.33143H2.29821C1.91992 1.33029 1.57871 1.55944 1.4355 1.91082C1.28767 2.2605 1.36942 2.66542 1.64123 2.92976L4.81995 6.10646C5.37014 6.65397 5.67852 7.40006 5.67602 8.17764V11.7273C5.67247 11.9728 5.76627 12.2097 5.93678 12.3858C6.10728 12.5619 6.34052 12.6628 6.58517 12.6663C6.7851 12.6654 6.97899 12.5974 7.13597 12.4732L7.95886 11.8538C8.1928 11.6777 8.33049 11.4014 8.33049 11.1079V8.17764C8.33149 7.39813 8.64476 6.65176 9.19982 6.10646L12.3653 2.92976C12.6371 2.66542 12.7188 2.2605 12.571 1.91082Z"
+                fill="#787878"
+              />
+            </svg>
+            <span className="text-[12px] font-light text-[#787878]">فیلتر</span>
+          </Button> */}
+          <Button
+            className="w-full h-full flex justify-start items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB] pr-0"
+            variant="publicButton"
+            // onClickHandler={() => setShowAuthorModal(true)}
           >
             <svg
               width="14"
@@ -56,7 +125,7 @@ const FilterMob = () => {
         </div>
         <div className="h-full flex justify-start items-center">
           <Button
-            className="w-full h-full flex justify-between items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB]"
+            className="w-full h-full flex justify-between items-center gap-[2px] pl-[4px] pr-0 mr-0 border-l-[1px] border-l-[#EBEBEB]"
             variant="publicButton"
             disabled={true}
           >
@@ -94,7 +163,7 @@ const FilterMob = () => {
             </svg>
           </Button>
           <Button
-            className="w-full h-full flex justify-between items-center gap-[2px] pr-[4px]"
+            className="w-full h-full flex justify-between items-center gap-[2px] pr-[4px] ml-0 pl-0"
             variant="publicButton"
             disabled={true}
           >
@@ -106,20 +175,42 @@ const FilterMob = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M1.33301 3.33333C1.33301 2.59695 2.0792 2 2.99967 2H12.9997C13.9201 2 14.6663 2.59695 14.6663 3.33333V5.33333C14.6663 6.06971 13.9201 6.66667 12.9997 6.66667H2.99967C2.0792 6.66667 1.33301 6.06971 1.33301 5.33333V3.33333Z"
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M2.99967 2H12.9997C13.9201 2 14.6663 2.59695 14.6663 3.33333V5.33333C14.6663 6.06971 13.9201 6.66667 12.9997 6.66667H2.99967C2.0792 6.66667 1.33301 6.06971 1.33301 5.33333V3.33333C1.33301 2.59695 2.0792 2 2.99967 2ZM12.9997 5.66667C13.2298 5.66667 13.4163 5.51743 13.4163 5.33333V3.33333C13.4163 3.14924 13.2298 3 12.9997 3H2.99967C2.76956 3 2.58301 3.14924 2.58301 3.33333V5.33333C2.58301 5.51743 2.76956 5.66667 2.99967 5.66667H12.9997Z"
                 fill="#787878"
               />
               <path
-                d="M1.33301 10C1.33301 9.26362 2.0792 8.66667 2.99967 8.66667H12.9997C13.9201 8.66667 14.6663 9.26362 14.6663 10V12C14.6663 12.7364 13.9201 13.3333 12.9997 13.3333H2.99967C2.0792 13.3333 1.33301 12.7364 1.33301 12V10Z"
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M2.99967 8.66667H12.9997C13.9201 8.66667 14.6663 9.26362 14.6663 10V12C14.6663 12.7364 13.9201 13.3333 12.9997 13.3333H2.99967C2.0792 13.3333 1.33301 12.7364 1.33301 12V10C1.33301 9.26362 2.0792 8.66667 2.99967 8.66667ZM12.9997 12.3333C13.2298 12.3333 13.4163 12.1841 13.4163 12V10C13.4163 9.8159 13.2298 9.66667 12.9997 9.66667H2.99967C2.76956 9.66667 2.58301 9.8159 2.58301 10V12C2.58301 12.1841 2.76956 12.3333 2.99967 12.3333H12.9997Z"
                 fill="#787878"
               />
             </svg>
           </Button>
         </div>
       </div>
-      {showModal && (
+      {/* {showModal && (
         <ModalSorting showModal={showModal} setShowModal={setShowModal} />
-      )}
+      )} */}
+      {/* {showModalFilter && (
+        <ModalBookFilter
+          showModalFilter={showModalFilter}
+          setShowModalFilter={setShowModalFilter}
+        />
+      )} */}
+      {/* {showContentModal && (
+        <ContentType
+          showContentModal={showContentModal}
+          setShowContentModal={setShowContentModal}
+        />
+      )} */}
+      {/* {showAuthorModal && (
+        <AuthorPublisherModal
+          showAuthorModal={showAuthorModal}
+          setShowAuthorModal={setShowAuthorModal}
+        />
+      )} */}
     </div>
   );
 };

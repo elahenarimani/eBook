@@ -19,7 +19,7 @@ const ModalSorting = ({ showModal, setShowModal }: ModalProp) => {
         setShowModal(false);
         console.log(
           "event target",
-          modalRef?.current?.contains(event?.target as Node)
+          modalRef?.current?.contains(event?.target as Node),
         );
         console.log("event target", event?.target as Node);
       }
@@ -28,7 +28,7 @@ const ModalSorting = ({ showModal, setShowModal }: ModalProp) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showModal, setShowModal]);
+  }, [showModal]);
   const sortingOptions: SortingOptions = [
     "پر فروش ترین",
     "جدید ترین",

@@ -187,7 +187,7 @@ const NavigationBar = () => {
   ];
   return (
     <nav
-      className="w-full h-[72px] sm:hidden fixed bottom-0 right-0 left-0 z-30 bg-white"
+      className="w-full h-[72px] sm:hidden fixed bottom-0 !right-0 !left-0 z-30 bg-white"
       style={{ boxShadow: "-4px 4px 8px 0px rgba(0,0,0,0.25)" }}
     >
       <div className="max-w-[390px] h-full mx-auto flex justify-around items-center !gap-[4px]">
