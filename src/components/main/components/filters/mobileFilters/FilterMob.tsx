@@ -1,11 +1,21 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+
+import ModalSorting from "./ModalSorting";
+
+import Button from "@/components/button/Button";
 
 const FilterMob = () => {
+  const [showModal, setShowModal] = useState<boolean>(false);
   return (
     <div className="w-full !h-[32px] sm:hidden rounded-[8px] py-[8px] px-[12px]">
       <div className="!max-w-[350px] h-full !mx-auto flex justify-between items-center gap-[169px]">
         <div className="h-full flex justify-start items-center">
-          <div className="w-full h-full flex justify-between items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB]">
+          <Button
+            className="w-full h-full flex justify-start items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB] pr-0"
+            variant="publicButton"
+            onClickHandler={() => setShowModal(true)}
+          >
             <svg
               width="14"
               height="14"
@@ -21,8 +31,12 @@ const FilterMob = () => {
               />
             </svg>
             <span className="text-[12px] font-light text-[#787878]">فیلتر</span>
-          </div>
-          <div className="w-full h-full flex justify-between items-center gap-[2px] pr-[4px]">
+          </Button>
+          <Button
+            className="w-full h-full flex justify-between items-center gap-[2px] pr-[4px]"
+            variant="publicButton"
+            disabled={true}
+          >
             <svg
               width="14"
               height="10"
@@ -35,14 +49,17 @@ const FilterMob = () => {
                 fill="#787878"
               />
             </svg>
-
             <span className="text-[12px] font-light text-[#787878]">
               جدیدترین
             </span>
-          </div>
+          </Button>
         </div>
         <div className="h-full flex justify-start items-center">
-          <div className="w-full h-full flex justify-between items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB]">
+          <Button
+            className="w-full h-full flex justify-between items-center gap-[2px] pl-[4px] border-l-[1px] border-l-[#EBEBEB]"
+            variant="publicButton"
+            disabled={true}
+          >
             <svg
               width="16"
               height="16"
@@ -75,8 +92,12 @@ const FilterMob = () => {
                 fill="#787878"
               />
             </svg>
-          </div>
-          <div className="w-full h-full flex justify-between items-center gap-[2px] pr-[4px]">
+          </Button>
+          <Button
+            className="w-full h-full flex justify-between items-center gap-[2px] pr-[4px]"
+            variant="publicButton"
+            disabled={true}
+          >
             <svg
               width="16"
               height="16"
@@ -93,9 +114,12 @@ const FilterMob = () => {
                 fill="#787878"
               />
             </svg>
-          </div>
+          </Button>
         </div>
       </div>
+      {showModal && (
+        <ModalSorting showModal={showModal} setShowModal={setShowModal} />
+      )}
     </div>
   );
 };

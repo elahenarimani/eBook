@@ -13,8 +13,8 @@ import FooterMobSize from "@/components/footer/FooterMobSize";
 // import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
 import NavigationBar from "@/components/main/components/navigationBar/NavigationBar";
 import FilterMob from "@/components/main/components/filters/mobileFilters/FilterMob";
-import ModalSorting from "@/components/main/components/filters/mobileFilters/ModalSorting";
-import FilterTextBooks from "@/components/main/components/filters/desktopFilters/components/filterText/FilterTextBooks";
+// import ModalSorting from "@/components/main/components/filters/mobileFilters/ModalSorting";
+// import FilterTextBooks from "@/components/main/components/filters/desktopFilters/components/filterText/FilterTextBooks";
 import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
 import AuthorPublisherFilter from "@/components/main/components/filters/desktopFilters/AuthorPublisherFilter";
 // import ContentType from "@/components/main/components/sidbarFilters/ContentType";
@@ -51,7 +51,7 @@ export default function Home() {
       <main className="!max-w-[390px] mx-auto sm:w-full sm:mx-0">
         <div>
           <FilterMob />
-          <ModalSorting />
+          {/* <ModalSorting /> */}
           {/* <Breadcrumb /> */}
           {/* <Button
           variant={"Primary"}

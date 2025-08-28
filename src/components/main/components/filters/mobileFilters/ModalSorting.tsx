@@ -1,11 +1,34 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import Button from "@/components/button/Button";
 import Checkbox from "@/components/checkBox/CheckBox";
-
+interface ModalProp {
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
+}
 type SortingOptions = string[];
-const ModalSorting = () => {
+const ModalSorting = ({ showModal, setShowModal }: ModalProp) => {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setShowModal(false);
+        console.log(
+          "event target",
+          modalRef?.current?.contains(event?.target as Node)
+        );
+        console.log("event target", event?.target as Node);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showModal, setShowModal]);
   const sortingOptions: SortingOptions = [
     "پر فروش ترین",
     "جدید ترین",
@@ -15,7 +38,10 @@ const ModalSorting = () => {
   ];
   return (
     <div className="sm:hidden w-full min-h-screen fixed inset-0 flex justify-end items-end bg-[#F5F6F8]/90 z-50">
-      <div className="w-[390px] !h-[272px] rounded-[8px] p-[16px] gap-[16px] flex flex-col justify-between items-start bg-white">
+      <div
+        className="w-[390px] !h-[272px] rounded-[8px] p-[16px] gap-[16px] flex flex-col justify-between items-start bg-white"
+        ref={modalRef}
+      >
         <p className="font-semibold text-[#444444]">نمایش بر اساس</p>
         <div className="flex h-full w-full flex-col gap-3">
           {sortingOptions.map((option) => (

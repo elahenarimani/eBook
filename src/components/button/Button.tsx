@@ -12,6 +12,7 @@ interface BTNProps {
   children?: React.ReactNode;
   className?: string;
   styles?: string;
+  disabled?: boolean;
 }
 
 interface variantsProps {
@@ -27,6 +28,7 @@ const Button = ({
   children,
   className,
   styles = "h-[38px] md:h-[44px] p-[12px] flex justify-between items-center gap-[8px] cursor-pointer",
+  disabled,
 }: BTNProps) => {
   const variants: variantsProps = {
     Primary:
@@ -51,6 +53,7 @@ const Button = ({
     <button
       className={`${styles || ""} ${variants[variant]} ${className || ""}`}
       onClick={onClickHandler}
+      disabled={disabled}
     >
       {children}
     </button>
