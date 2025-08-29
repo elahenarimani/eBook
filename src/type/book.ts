@@ -51,6 +51,7 @@ export const subCategories = {
     "طنز",
   ],
 } as const;
+export type ContentType = "کتاب متنی" | "کتاب صوتی" | "مجله";
 
 export type MainCategory = keyof typeof subCategories;
 // MainCategory :"کتاب های متنی" | "داستان و رمان" | "داستان و رمان خارجی"
@@ -72,7 +73,7 @@ export interface Book {
   price?: number;
   discount?: number;
   tags: string[];
-  contentType: "کتاب متنی" | "کتاب صوتی" | "مجله";
+  contentType: ContentType;
   category?: MainCategory;
   subCategory?: subCategory;
 }

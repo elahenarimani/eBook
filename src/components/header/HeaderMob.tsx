@@ -6,7 +6,7 @@ import SearchBar from "./component/SearchBar";
 
 const HeaderMob = () => {
   return (
-    <div className="header sm:hidden w-full h-[60px] bg-white py-[16px] px-[20px] rounded-bl-[4px] rounded-br-[4px] sticky z-10">
+    <div className="header sm:hidden w-full h-[60px] bg-white py-[16px] px-[20px] rounded-bl-[4px] rounded-br-[4px] sticky z-10 overflow-x-hidden">
       <div className="!max-w-[390px] h-full !mx-auto flex justify-between items-center gap-[15px]">
         <div>
           <svg

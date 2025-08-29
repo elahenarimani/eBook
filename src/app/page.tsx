@@ -9,10 +9,11 @@ import FooterDes from "../components/footer/FooterDes";
 // import BookCardVer from "@/components/bookCard/BookCardVer";
 // import BookCarousel from "@/components/bookCarousel/BookCarousel";
 import FooterMobSize from "@/components/footer/FooterMobSize";
+// import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
+// import FilterMob from "@/components/main/components/filters/mobileFilters/FilterMob";
 // import ProductSorting from "@/components/main/components/modalFilterMob/ProductSorting";
 // import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
 import NavigationBar from "@/components/main/components/navigationBar/NavigationBar";
-import FilterMob from "@/components/main/components/filters/mobileFilters/FilterMob";
 // import ModalSorting from "@/components/main/components/filters/mobileFilters/ModalSorting";
 // import FilterTextBooks from "@/components/main/components/filters/desktopFilters/components/filterText/FilterTextBooks";
 // import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
@@ -49,11 +50,11 @@ export default function Home() {
   // ];
   return (
     <div className="w-full h-full bg-[#F5F6F8]">
-      <main className="!max-w-[390px] mx-auto sm:w-full sm:mx-0">
-        <div>
-          <FilterMob />
+      <main className="w-full h-full">
+        <div className="!max-w-[390px] mx-auto sm:w-full sm:mx-0">
+          {/* <FilterMob /> */}
           {/* <ModalSorting /> */}
-          {/* <Breadcrumb /> */}
+
           {/* <Button
           variant={"Primary"}
           onClickHandler={() => {

@@ -1,33 +1,84 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
-import { books } from "../.../../../../../data/books";
+const contentTypeMap: Record<string, string> = {
+  "کتاب-متنی": "کتاب متنی",
+  "کتاب-صوتی": "کتاب صوتی",
+  مجله: "مجله",
+};
 
-// interface ItemProp {
-//   label: string;
-//   path: string;
-// }
+const categoryMap: Record<string, string> = {
+  "کتاب-های-متنی": "کتاب های متنی",
+  "داستان-و-رمان": "داستان و رمان",
+  "داستان-و-رمان-خارجی": "داستان و رمان خارجی",
+};
+
+const subCategoryMap: Record<string, string> = {
+  فانتزی: "فانتزی",
+  عاشقانه: "عاشقانه",
+  درام: "درام",
+  "داستان-کوتاه": "داستان کوتاه",
+  "جنایی-و-پلیسی": "جنایی و پلیسی",
+  "معمایی-تاریخی": "معمایی تاریخی",
+  طنز: "طنز",
+  "داستان-و-رمان-ایرانی": "داستان و رمان ایرانی",
+  // 🔹 بقیه زیردسته‌ها رو هم اینجا اضافه کن
+};
+interface ItemProp {
+  label: string;
+  path: string;
+}
 // interface BreadcrumbProps {
 //   books: Book[];
 // }
 const Breadcrumb = () => {
-  //   const items = [
-  //     { label: "home", path: "/" },
-  //     { label: contentType , path: "/contentType" },
-  //     { label: "category", path: "/products/category" },
-  //     { label: "subCategory", path: "/products/category/subCategory" },
-  //   ];
+  const params = useParams<{
+    contentType?: string;
+    category?: string;
+    subCategory?: string;
+  }>();
+  const itemsOption: ItemProp[] = [
+    { label: "خانه", path: "/" },
+    { label: "کتاب ها", path: "/books" },
+    // { label: contentType , path: "/books/contentType" },
+    // { label: "category", path: "/books/contentType/category" },
+    // { label: "subCategory", path: "/books/contentType/category/subCategory" },
+  ];
+  if (params.contentType) {
+    itemsOption.push({
+      // label: books[params.contentType] || params.contentType,
+      label: contentTypeMap[params.contentType] || params.contentType,
+      path: `/books/${params.contentType}`,
+    });
+  }
+  if (params.category) {
+    itemsOption.push({
+      label: categoryMap[params.category] || params.category,
+      path: `/books/${params.contentType}/${params.category}`,
+    });
+  }
+  if (params.subCategory) {
+    itemsOption.push({
+      label: subCategoryMap[params.subCategory] || params.subCategory,
+      path: `/books/${params.contentType}/${params.category}/${params.subCategory}`,
+    });
+  }
   return (
-    <nav className="w-[395px] h-[12px] sm:w-[320px] sm:h-[16px] flex flex-row justify-between gap-[2px]">
-      {books.map((item, index) => (
-        <div key={index}>
+    <nav className="w-[239] h-[12px] sm:w-[320px] sm:h-[16px] flex flex-row justify-start items-center gap-[2px] bg-white border-l-[3px] border-l-white">
+      {itemsOption.map((item, index) => (
+        <span
+          key={index}
+          className="flex flex-row justify-stary items-center gap-[2px]"
+        >
           <Link
-            href={"/"}
-            className="p-[2px] font-thin text-[8px] text-[#555555] sm:font-light sm:text-[12px]"
+            href={item.path}
+            className="w-full p-[2px] font-thin text-[8px] text-[#555555] sm:font-light sm:text-[12px] truncate"
           >
-            {item.title}
+            {item.label}
           </Link>
-          <div className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]">
+          <span className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]">
             <svg
               width="100%"
               height="100%"
@@ -40,8 +91,8 @@ const Breadcrumb = () => {
                 fill="#555555"
               />
             </svg>
-          </div>
-        </div>
+          </span>
+        </span>
       ))}
     </nav>
   );
