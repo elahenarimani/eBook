@@ -66,15 +66,12 @@ const Breadcrumb = () => {
     });
   }
   return (
-    <nav className="w-[239] h-[12px] sm:w-[320px] sm:h-[16px] flex flex-row justify-start items-center gap-[2px] bg-white border-l-[3px] border-l-white">
+    <nav className="w-[239] h-[12px] sm:w-[320px] sm:h-[16px] flex flex-row justify-start items-center gap-[6px] bg-white border-l-[3px] border-l-white">
       {itemsOption.map((item, index) => (
-        <span
-          key={index}
-          className="flex flex-row justify-stary items-center gap-[2px]"
-        >
+        <span key={index} className="flex flex-row justify-stary items-center">
           <Link
             href={item.path}
-            className="w-full p-[2px] font-thin text-[8px] text-[#555555] sm:font-light sm:text-[12px] truncate"
+            className="w-full py-[2px] font-thin text-[8px] text-[#555555] sm:font-light sm:text-[12px] truncate"
           >
             {item.label}
           </Link>

@@ -26,7 +26,7 @@
 //
 
 // 1) داده‌ ثابت شامل دسته‌ها و زیر‌دسته‌ها
-export const subCategories = {
+export const SubCategories = {
   "کتاب های متنی": [
     "داستان و رمان",
     "روانشناسی",
@@ -53,10 +53,10 @@ export const subCategories = {
 } as const;
 export type ContentType = "کتاب متنی" | "کتاب صوتی" | "مجله";
 
-export type MainCategory = keyof typeof subCategories;
+export type MainCategory = keyof typeof SubCategories;
 // MainCategory :"کتاب های متنی" | "داستان و رمان" | "داستان و رمان خارجی"
 
-export type subCategory = (typeof subCategories)[MainCategory][number];
+export type SubCategory = (typeof SubCategories)[MainCategory][number];
 // SubCategory:"داستان و رمان" | "روانشناسی"| "مدیریت و بازاریابی"| "علوم اجنماعی" | "ادبیات"| "تاریخ" | "هنر"
 // | "آموزشی" | "زندگی‌نامه و سفرنامه"| "ازدواج و خانواده" | "فلسفه و عرفان" | "داستان و رمان ایرانی" | "داستان و رمان خارجی" | "درام"
 // | "فانتزی" | "داستان کوتاه"| "جنایی و پلیسی"| "عاشقانه" | "معمایی تاریخی" | "طنز"
@@ -75,5 +75,5 @@ export interface Book {
   tags: string[];
   contentType: ContentType;
   category?: MainCategory;
-  subCategory?: subCategory;
+  subCategory?: SubCategory;
 }

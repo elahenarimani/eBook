@@ -355,7 +355,7 @@ export const books: Book[] = [
     rating: 4.2,
     reviewsComment: 98,
     price: 116000,
-    contentType: "کتاب متنی",
+    contentType: "مجله",
     category: "کتاب های متنی",
     subCategory: "داستان و رمان",
     tags: [

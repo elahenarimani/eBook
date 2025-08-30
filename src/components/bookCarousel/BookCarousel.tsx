@@ -11,8 +11,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 const BookCarousel = () => {
   return (
-    <div className="w-[370px] h-[378px] sm:w-full sm:h-[427px] relative text-center max-w-[1280px] mx-auto">
-      <div className="custom-button !w-full !h-[37] flex flex-row justify-between items-center gap-[100px]">
+    <div className="w-[370px] h-[378px] sm:!min-w-full sm:h-[427px] relative text-center max-w-[1280px] mx-auto">
+      <div className="custom-button !w-full !h-[37] hidden sm:flex flex-row justify-between items-center gap-[100px]">
         <div className="custom-prev-btn !w-[36px] !h-[36px] bg-white rounded-[100px] absolute top-1/2 -translate-y-1/2 z-10000 left-[-18px] flex justify-center items-center">
           <svg
             width="24"
@@ -50,11 +50,17 @@ const BookCarousel = () => {
         }}
         className="mySwiper w-full h-full"
         breakpoints={{
-          320: {
-            slidesPerView: 2, // xs
+          0: {
+            slidesPerView: 2,
+            allowTouchMove: false,
+            navigation: false,
+            spaceBetween: 10,
           },
           640: {
-            slidesPerView: 2, // sm
+            slidesPerView: 2,
+            allowTouchMove: true,
+            navigation: true,
+            spaceBetween: 20, // sm
           },
           768: {
             slidesPerView: 3, // md
@@ -72,32 +78,32 @@ const BookCarousel = () => {
         spaceBetween={20}
       >
         <SwiperSlide>
-          <div className="w-full h-full bg-red-500 flex justify-center items-center">
+          <div className="w-[167px] h-[374px] sm:w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
             <BookCardVer />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full bg-red-500 flex justify-center items-center">
+          <div className="w-[167px] h-[374px] sm:w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
             <BookCardVer />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full bg-red-500 flex justify-center items-center">
+          <div className="w-[167px] h-[374px] sm:w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
             <BookCardVer />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full bg-red-500 flex justify-center items-center">
+          <div className="w-[167px] h-[374px] sm:w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
             <BookCardVer />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full bg-red-500 flex justify-center items-center">
+          <div className="w-[167px] h-[374px] sm:w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
             <BookCardVer />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full bg-red-500 flex justify-center items-center">
+          <div className="w-[167px] h-[374px] sm:w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
             <BookCardVer />
           </div>
         </SwiperSlide>
