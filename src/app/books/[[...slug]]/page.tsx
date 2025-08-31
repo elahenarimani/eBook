@@ -1,5 +1,4 @@
-import CategorySlider from "@/ComponentDynamic/CategorySlider";
-import Breadcrumb1 from "@/components/main/components/breadcrumb/Breadcrumb1";
+import FiltersByBreadCrumb from "@/components/main/components/filtersByBreadCrumb/FiltersByBreadCrumb";
 import Test2 from "@/components/main/components/test/Test2";
 
 // import { ContentType, MainCategory, SubCategory } from "@/type/book";
@@ -27,21 +26,14 @@ const page = async ({ params }: PageProps) => {
   } else if (slug?.length === 1) {
     return (
       <div className="w-full sm:w-full h-full !px-[20px] xl:px-[80px] overflow-x-hidden sm:overflow-auto">
-        <div className="!max-w-[390px] mx-auto sm:!max-w-[1280px]">
-          <Breadcrumb1 slug={slug} />
-          <CategorySlider slug={slug} />
+        <div className="!max-w-[390px] mx-auto sm:!max-w-[1280px] w-full h-full">
+          <FiltersByBreadCrumb slug={slug} />
+          {/* <Breadcrumb1 slug={slug} /> */}
+          {/* <CategorySlider slug={slug} /> */}
         </div>
       </div>
     );
   }
-  // const page = () => {
-  //   const slug = params.slug || [];
-  //   const contentType = slug[0] as ContentType | undefined;
-  //   const category = slug[1] as MainCategory | undefined;
-  //   const subCategory = slug[2] as SubCategory | undefined;
-
-  //   console.log("category", category);
-  //   console.log("subCategory", subCategory);
   return (
     <div className="p-4">
       <h1 className="text-xl font-bold mb-4">لیست کتاب‌ها</h1>

@@ -1,24 +1,22 @@
 import React from "react";
 import Link from "next/link";
 
-import Test from "../test/Test";
+import BreadCRBResContent from "./showBreadCrumbResult/filterResult/BreadCRBResContent";
 
 import { books } from "@/data/books";
-
 interface BreadcrumbProp {
   slug: string[] | string;
 }
-const Breadcrumb1 = ({ slug }: BreadcrumbProp) => {
+const BreadcrumbContent = ({ slug }: BreadcrumbProp) => {
   const allData: string[] = Array.from(
     new Set(books.map((item) => item.contentType)),
   );
   console.log("allData", allData);
   const normalizedSlug = Array.isArray(slug) ? slug.join("-") : slug;
   const safeSlug = decodeURIComponent(normalizedSlug);
-
   return (
-    <>
-      <nav className="w-[239] h-[12px] sm:w-[320px] sm:h-[16px] flex flex-row justify-start items-center gap-[6px] bg-white border-l-[3px] border-l-white !my-[12px]">
+    <div className="BreadcrumbContent w-full h-full">
+      <nav className="w-[239px] h-full sm:w-[320px] sm:h-[16px] flex flex-row justify-start items-center gap-[6px] bg-white border-l-[3px] border-l-white !my-[12px]">
         <span className="h-full flex flex-row justify-stary items-center">
           <Link
             href={"/"}
@@ -63,13 +61,12 @@ const Breadcrumb1 = ({ slug }: BreadcrumbProp) => {
             </svg>
           </span>
         </span>
-        {/* ;   ))} */}
       </nav>
       <div className="w-full h-full">
-        <Test allData={allData} />
+        <BreadCRBResContent allData={allData} />
       </div>
-    </>
+    </div>
   );
 };
 
-export default Breadcrumb1;
+export default BreadcrumbContent;

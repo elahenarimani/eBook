@@ -54,7 +54,7 @@ const BookCarousel = () => {
             slidesPerView: 2,
             allowTouchMove: false,
             navigation: false,
-            spaceBetween: 10,
+            spaceBetween: 5,
           },
           640: {
             slidesPerView: 2,
