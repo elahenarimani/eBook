@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import BreadCRBResContent from "./showBreadCrumbResult/filterResult/BreadCRBResContent";
+import BreadCRBResContent from "../../filterResult/BreadCRBResContent";
 
 import { books } from "@/data/books";
 interface BreadcrumbProp {

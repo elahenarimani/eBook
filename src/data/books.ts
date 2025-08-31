@@ -439,7 +439,7 @@ export const books: Book[] = [
     reviewsComment: 180,
     price: 196000,
     discount: 245000,
-    contentType: "کتاب متنی",
+    contentType: "مجله",
     category: "داستان و رمان خارجی",
     subCategory: "درام",
     tags: [
@@ -507,7 +507,7 @@ export const books: Book[] = [
     contentType: "کتاب صوتی",
     category: "کتاب های متنی",
     subCategory: "روانشناسی",
-    tags: ["پرفروش‌ترین کتاب‌های ماه گذشته", "تازه های روانشناسی"],
+    tags: ["پرفروش‌ترین های ماه گذشته", "تازه های روانشناسی"],
   },
   {
     id: 9,
@@ -543,7 +543,7 @@ export const books: Book[] = [
     price: 217000,
     reviewsComment: 44,
     discount: 60,
-    contentType: "کتاب صوتی",
+    contentType: "مجله",
     category: "کتاب های متنی",
     subCategory: "روانشناسی",
     tags: [
@@ -569,11 +569,7 @@ export const books: Book[] = [
     contentType: "کتاب صوتی",
     category: "کتاب های متنی",
     subCategory: "روانشناسی",
-    tags: [
-      "محبوب ترین کتاب های متنی",
-      "تازه های روانشناسی",
-      "تازه های روانشناسی",
-    ],
+    tags: ["تازه های روانشناسی", "تازه های روانشناسی"],
   },
   {
     id: 12,
