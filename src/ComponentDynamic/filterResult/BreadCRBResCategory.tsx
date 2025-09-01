@@ -1,16 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import CategorySlider from "./CategorySlider";
-
 import Button from "@/components/button/Button";
+
 import { books } from "@/data/books";
 import { Book } from "@/type/book";
+import CategorySliderCategory from "./CategorySliderCategory";
 interface BreadResProp {
   allData: string[];
 }
 
-const BreadCRBResContent = ({ allData }: BreadResProp) => {
+const BreadCRBResCategory = ({ allData }: BreadResProp) => {
   const [selected, setSelected] = useState<string | null>(null);
   function filterBooksBySelection() {
     if (!selected) return { filteredBook: books, matchedTags: [] };
@@ -50,10 +50,13 @@ const BreadCRBResContent = ({ allData }: BreadResProp) => {
         ))}
       </div>
       {selected && (
-        <CategorySlider filteredBook={filteredBook} matchedTags={matchedTags} />
+        <CategorySliderCategory
+          filteredBook={filteredBook}
+          matchedTags={matchedTags}
+        />
       )}
     </div>
   );
 };
 
-export default BreadCRBResContent;
+export default BreadCRBResCategory;

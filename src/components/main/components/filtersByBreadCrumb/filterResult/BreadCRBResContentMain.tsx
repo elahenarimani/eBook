@@ -10,7 +10,7 @@ interface BreadResProp {
   allData: string[];
 }
 
-const BreadCRBResContent = ({ allData }: BreadResProp) => {
+const BreadCRBResContentMain = ({ allData }: BreadResProp) => {
   const [selected, setSelected] = useState<string | null>(null);
   function filterBooksBySelection() {
     if (!selected) return { filteredBook: books, matchedTags: [] };
@@ -35,6 +35,7 @@ const BreadCRBResContent = ({ allData }: BreadResProp) => {
   useEffect(() => {
     console.log("selected", selected);
   }, []);
+  console.log("allData", allData);
   return (
     <div className="bread-crumb-result w-[350px] h-full sm:w-[995px] bg-[#F5F6F8]">
       <div className="h-full text-[14px] flex flex-wrap gap-[4px] bg-[#F5F6F8]">
@@ -56,4 +57,4 @@ const BreadCRBResContent = ({ allData }: BreadResProp) => {
   );
 };
 
-export default BreadCRBResContent;
+export default BreadCRBResContentMain;

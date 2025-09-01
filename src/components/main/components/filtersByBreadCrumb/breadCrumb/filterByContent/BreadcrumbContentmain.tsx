@@ -1,19 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-import BreadCRBResContent from "../../filterResult/BreadCRBResContent";
+import BreadCRBResContentMain from "../../filterResult/BreadCRBResContentMain";
 
 import { books } from "@/data/books";
-interface BreadcrumbProp {
-  slug: string[] | string;
-}
-const BreadcrumbContent = ({ slug }: BreadcrumbProp) => {
+const BreadcrumbContentmain = () => {
   const allData: string[] = Array.from(
-    new Set(books.map((item) => (item.category ? item?.category : ""))),
+    new Set(books.map((item) => item.contentType)),
   );
   console.log("allData", allData);
-  const normalizedSlug = Array.isArray(slug) ? slug.join("-") : slug;
-  const safeSlug = decodeURIComponent(normalizedSlug);
   return (
     <div className="BreadcrumbContent w-full h-full bg-[#F5F6F8]">
       <nav className="w-[239px] h-full sm:w-[320px] sm:h-[16px] flex flex-row justify-start items-center gap-[6px] bg-[#F5F6F8] !my-[12px]">
@@ -44,7 +39,7 @@ const BreadcrumbContent = ({ slug }: BreadcrumbProp) => {
             href="/"
             className="w-full font-thin text-[12px] text-[#555555] sm:font-light sm:text-[12px] truncate pb-[4px]"
           >
-            {safeSlug}
+            کتاب متنی{" "}
           </Link>
           <span className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]">
             <svg
@@ -62,11 +57,11 @@ const BreadcrumbContent = ({ slug }: BreadcrumbProp) => {
           </span>
         </span>
       </nav>
-      <div className="w-full h-full bg-[#F5F6F8]">
-        <BreadCRBResContent allData={allData} />
+      <div className="sm:hidden w-full h-full bg-[#F5F6F8]">
+        <BreadCRBResContentMain allData={allData} />
       </div>
     </div>
   );
 };
 
-export default BreadcrumbContent;
+export default BreadcrumbContentmain;

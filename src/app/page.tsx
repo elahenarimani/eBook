@@ -9,6 +9,11 @@ import FooterDes from "../components/footer/FooterDes";
 // import BookCardVer from "@/components/bookCard/BookCardVer";
 // import BookCarousel from "@/components/bookCarousel/BookCarousel";
 import FooterMobSize from "@/components/footer/FooterMobSize";
+import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
+import AuthorPublisherFilter from "@/components/main/components/filters/desktopFilters/AuthorPublisherFilter";
+import ContentType from "@/components/main/components/filters/desktopFilters/ContentType";
+import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
+import FiltersByBreadCrumbMain from "@/components/main/components/filtersByBreadCrumb/FiltersByBreadCrumbMain";
 // import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
 // import FilterMob from "@/components/main/components/filters/mobileFilters/FilterMob";
 // import ProductSorting from "@/components/main/components/modalFilterMob/ProductSorting";
@@ -50,74 +55,22 @@ export default function Home() {
   // ];
   return (
     <div className="w-full h-full">
-      <main className="w-full h-full">
-        <div className="!max-w-[390px] mx-auto sm:w-full sm:mx-0">
-          {/* <FilterMob /> */}
-          {/* <ModalSorting /> */}
-
-          {/* <Button
-          variant={"Primary"}
-          onClickHandler={() => {
-            3 + 2;
-          }}
-        >
-          hello
-        </Button>
-        <Button
-          variant={"Secondary"}
-          onClickHandler={() => {
-            3 + 2;
-          }}
-        >
-          hello
-        </Button>
-        <Button
-          variant={"Tertiary"}
-          onClickHandler={() => {
-            3 + 2;
-          }}
-        >
-          hello
-        </Button>
-        <Button
-          variant={"Destructive"}
-          onClickHandler={() => {
-            3 + 2;
-          }}
-        >
-          hello elahe
-        </Button> */}
-          {/* <CheckBoxButton /> */}
-          {/* <Checkbox /> */}
-          {/* <p>سلام دنیا</p> */}
-          {/* <BookCardVer />
-        // <BookCardVer />
-        <BookCardVer /> */}
-          {/* <BookCardVer /> */}
-          {/* <ProductSorting /> */}
-          {/* <div style={{ fontFamily: "Vazirmatn" }}>0123456789 ۱۲۳۴۵۶۷۸۹</div> */}
-          {/* <div>
-          <BookCarousel />
-        </div> */}
-          {/* <ContentType /> */}
-          {/* {/* <FilterTextBooks /> */}
-          {/* <FilterTextBooks /> */}
-          {/* <FilterText /> */}
-          {/* <PublisherFilter /> */}
-          {/* <AuthorPublisherFilter title="ناشر" options={publisherData} />
-          <AuthorPublisherFilter
-            title="نویسنده، مترجم یا راوی"
-            options={authorData}
-          /> */}
-          {/* <AuthorPublisherModal
-            title="نویسنده، مترجم یا راوی"
-            options={authorData}
-          /> */}
+      <main className="h-full !max-w-[390px] sm:!max-w-[1280px] mx-auto !px-[20px] xl:px-[80px] overflow-x-hidden sm:flex sm:flex-col sm:justify-between sm:items-start">
+        <div className="hidden sm:block py-[24px]">
+          <Breadcrumb />
+        </div>
+        <div className="hidden sm:flex w-full h-full flex-col justify-start items-start">
+          <FilterText />
+          <ContentType />
+          <AuthorPublisherFilter title={""} options={[]} />
+        </div>
+        <div className="block sm:hidden">
+          <FiltersByBreadCrumbMain />
         </div>
       </main>
-      <footer className="w-full h-full">
+      <footer className="block w-full h-full">
         <FooterDes />
-        <div className="!max-w-[390px] !mx-auto sm:w-full sm:mx-0">
+        <div className="!max-w-[390px] !mx-auto sm:w-full sm:mx-0 sm:hidden">
           <FooterMobSize />
           <NavigationBar />
         </div>

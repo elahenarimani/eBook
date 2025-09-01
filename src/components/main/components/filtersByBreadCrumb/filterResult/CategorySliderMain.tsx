@@ -8,7 +8,7 @@ interface CategorySlider {
   filteredBook: Book[];
   matchedTags: string[];
 }
-const CategorySlider = ({ filteredBook, matchedTags }: CategorySlider) => {
+const CategorySliderMain = ({ filteredBook, matchedTags }: CategorySlider) => {
   console.log("filteredBook", filteredBook);
   console.log("matchedTags ", matchedTags);
 
@@ -58,4 +58,4 @@ const CategorySlider = ({ filteredBook, matchedTags }: CategorySlider) => {
   );
 };
 
-export default CategorySlider;
+export default CategorySliderMain;

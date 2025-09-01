@@ -1,6 +1,13 @@
 import React from "react";
 import Image from "next/image";
-const ImageSection = () => {
+
+import { Book } from "@/type/book";
+interface ImageProos {
+  matchedTags: string[];
+  filteredBook: Book[];
+}
+const ImageSection = ({ matchedTags, filteredBook }: ImageProos) => {
+  console.log(matchedTags, filteredBook);
   return (
     <div className="w-full h-[246px]">
       <div className="w-full h-full flex justify-center items-center bg-[#EBEBEB] py-[24px] px-[10px] sm:p-[36px] rounded-tl-[8px] rounded-tr-[8px]">

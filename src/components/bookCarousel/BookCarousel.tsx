@@ -11,7 +11,12 @@ import BookCardVer from "../bookCard/BookCardVer";
 import "swiper/css/pagination";
 import "swiper/css";
 import "swiper/css/navigation";
-const BookCarousel = () => {
+import { Book } from "@/type/book";
+interface BookProp {
+  matchedTags: string[];
+  filteredBook: Book[];
+}
+const BookCarousel = ({ matchedTags, filteredBook }: BookProp) => {
   return (
     <div className="w-[370px] h-[378px] sm:!min-w-full sm:h-[427px] relative text-center max-w-[995px] mx-auto">
       <Swiper
@@ -60,32 +65,50 @@ const BookCarousel = () => {
       >
         <SwiperSlide>
           <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer />
+            <BookCardVer
+              matchedTags={matchedTags}
+              filteredBook={filteredBook}
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer />
+            <BookCardVer
+              matchedTags={matchedTags}
+              filteredBook={filteredBook}
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer />
+            <BookCardVer
+              matchedTags={matchedTags}
+              filteredBook={filteredBook}
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer />
+            <BookCardVer
+              matchedTags={matchedTags}
+              filteredBook={filteredBook}
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer />
+            <BookCardVer
+              matchedTags={matchedTags}
+              filteredBook={filteredBook}
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer />
+            <BookCardVer
+              matchedTags={matchedTags}
+              filteredBook={filteredBook}
+            />
           </div>
         </SwiperSlide>
         <SwiperNavButton />

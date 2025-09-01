@@ -1,6 +1,11 @@
+import { Book } from "@/type/book";
 import React from "react";
-
-const BookInfoSection = () => {
+interface BookProp {
+  matchedTags: string[];
+  filteredBook: Book[];
+}
+const BookInfoSection = ({ matchedTags, filteredBook }: BookProp) => {
+  console.log(matchedTags, filteredBook);
   return (
     <div className="rounded-bl-[8px] rounded-br-[8px] w-full h-full flex flex-col justify-between items-start gap-[12px] p-[12px]">
       <div className="flex flex-col justify-between items-start gap-[4px]">

@@ -1,7 +1,7 @@
-import FiltersByBreadCrumb from "@/components/main/components/filtersByBreadCrumb/FiltersByBreadCrumb";
+import FiltersByBreadCrumbcategory from "../../../ComponentDynamic/FiltersByBreadCrumbcategory";
+
 import Test2 from "@/components/main/components/test/Test2";
 
-// import { ContentType, MainCategory, SubCategory } from "@/type/book";
 interface PageProps {
   params: Promise<{ slug: string[] | string }>;
 }
@@ -26,9 +26,7 @@ const page = async ({ params }: PageProps) => {
     return (
       <div className="w-full sm:w-full h-full !px-[20px] xl:px-[80px] overflow-x-hidden sm:overflow-auto">
         <div className="!max-w-[390px] mx-auto sm:!max-w-[1280px] w-full h-full">
-          <FiltersByBreadCrumb slug={slug} />
-          {/* <Breadcrumb1 slug={slug} /> */}
-          {/* <CategorySlider slug={slug} /> */}
+          <FiltersByBreadCrumbcategory slug={slug} />
         </div>
       </div>
     );

@@ -26,9 +26,6 @@ export default function RootLayout({
       <body className={`${vazirFont.className} antialiased`}>
         <HeaderDes />
         <HeaderMob />
-        {/* <div className="w-full py-[12px] px-[20px] overflow-x-hidden">
-          <Breadcrumb />
-        </div> */}
         <div className="w-full min-h-screen bg-[#F5F6F8]">{children}</div>
       </body>
     </html>
