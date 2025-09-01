@@ -6,7 +6,6 @@ import "./globals.css";
 import HeaderDes from "../components/header/HeaderDes";
 
 import HeaderMob from "@/components/header/HeaderMob";
-// import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
 
 const vazirFont = localFont({
   src: "../font/Vazirmatn-Regular.ttf",
@@ -30,7 +29,7 @@ export default function RootLayout({
         {/* <div className="w-full py-[12px] px-[20px] overflow-x-hidden">
           <Breadcrumb />
         </div> */}
-        {children}
+        <div className="w-full min-h-screen bg-[#F5F6F8]">{children}</div>
       </body>
     </html>
   );

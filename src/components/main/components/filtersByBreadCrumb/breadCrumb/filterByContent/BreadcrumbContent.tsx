@@ -16,7 +16,7 @@ const BreadcrumbContent = ({ slug }: BreadcrumbProp) => {
   const safeSlug = decodeURIComponent(normalizedSlug);
   return (
     <div className="BreadcrumbContent w-full h-full">
-      <nav className="w-[239px] h-full sm:w-[320px] sm:h-[16px] flex flex-row justify-start items-center gap-[6px] bg-white border-l-[3px] border-l-white !my-[12px]">
+      <nav className="w-[239px] h-full sm:w-[320px] sm:h-[16px] flex flex-row justify-start items-center gap-[6px] bg-[#F5F6F8] border-l-[3px] border-l-white !my-[12px]">
         <span className="h-full flex flex-row justify-stary items-center">
           <Link
             href={"/"}
@@ -62,7 +62,7 @@ const BreadcrumbContent = ({ slug }: BreadcrumbProp) => {
           </span>
         </span>
       </nav>
-      <div className="w-full h-full">
+      <div className="w-full h-full bg-[#F5F6F8]">
         <BreadCRBResContent allData={allData} />
       </div>
     </div>

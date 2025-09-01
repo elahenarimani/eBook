@@ -6,36 +6,15 @@ import { Book } from "@/type/book";
 
 interface CategorySlider {
   filteredBook: Book[];
-  selected: string;
+  matchedTags: string[];
 }
-const CategorySlider = ({ filteredBook, selected }: CategorySlider) => {
-  function filterBooksBySelectionWithMap() {
-    if (!selected) return { filtered: filteredBook, matchedTags: [] };
-
-    const query = selected.toLowerCase();
-
-    const filtered: Book[] = [];
-    const matchedTags: string[] = [];
-
-    filteredBook.map((book) => {
-      const foundTag = book.tags.find((tag) =>
-        query.split(" ").some((word) => tag.toLowerCase().includes(word)),
-      );
-      if (foundTag && !matchedTags.includes(foundTag)) {
-        filtered.push(book);
-        matchedTags.push(foundTag);
-      }
-    });
-
-    return { filtered, matchedTags };
-  }
-
-  const { filtered, matchedTags } = filterBooksBySelectionWithMap();
-  // const matchedTag = getFirstMatchedTag();
+const CategorySlider = ({ filteredBook, matchedTags }: CategorySlider) => {
   console.log("filteredBook", filteredBook);
+  console.log("matchedTags ", matchedTags);
+
   return (
-    <div className="!max-w-[350px] h-full sm:!w-full sm:!min-w-full">
-      {filtered.map((book, index) => {
+    <div className="!max-w-[350px] h-full sm:!w-full sm:!min-w-full flex flex-col justify-between items-center gap-[34px]">
+      {filteredBook.map((book, index) => {
         return (
           <div
             className="w-full h-full flex flex-col justify-between items-center gap-[12px]"
@@ -73,7 +52,6 @@ const CategorySlider = ({ filteredBook, selected }: CategorySlider) => {
         );
       })}
     </div>
-    // <div className="hi w-fulll h-full">hi{slug}</div>
   );
 };
 

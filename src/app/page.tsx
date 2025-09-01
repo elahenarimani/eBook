@@ -49,7 +49,7 @@ export default function Home() {
   //   { id: 6, name: "Darren Hardy" },
   // ];
   return (
-    <div className="w-full h-full bg-[#F5F6F8]">
+    <div className="w-full h-full">
       <main className="w-full h-full">
         <div className="!max-w-[390px] mx-auto sm:w-full sm:mx-0">
           {/* <FilterMob /> */}

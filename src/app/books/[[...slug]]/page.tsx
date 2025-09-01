@@ -20,7 +20,6 @@ const page = async ({ params }: PageProps) => {
     return (
       <div className="w-full py-[12px] px-[20px] overflow-x-hidden">
         <h2 className="text-amber-300">now you have 1 slug :{slug[0]}</h2>;
-        {/* <Test slug={slug} /> */}
       </div>
     );
   } else if (slug?.length === 1) {
