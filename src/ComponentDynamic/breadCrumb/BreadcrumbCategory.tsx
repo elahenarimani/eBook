@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 // import BreadCRBResCategory from "../filterResult/BreadCRBResCategory";
-
 import { books } from "@/data/books";
 interface BreadcrumbProp {
   slug: string[] | string;

@@ -13,10 +13,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Book } from "@/type/book";
 interface BookProp {
-  matchedTags: string[];
-  filteredBook: Book[];
+  sliderBooks: Book[];
 }
-const BookCarousel = ({ matchedTags, filteredBook }: BookProp) => {
+const BookCarousel = ({ sliderBooks }: BookProp) => {
   return (
     <div className="w-[370px] h-[378px] sm:!min-w-full sm:h-[427px] relative text-center max-w-[995px] mx-auto">
       <Swiper
@@ -63,54 +62,21 @@ const BookCarousel = ({ matchedTags, filteredBook }: BookProp) => {
           },
         }}
       >
-        <SwiperSlide>
-          <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer
-              matchedTags={matchedTags}
-              filteredBook={filteredBook}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer
-              matchedTags={matchedTags}
-              filteredBook={filteredBook}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer
-              matchedTags={matchedTags}
-              filteredBook={filteredBook}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer
-              matchedTags={matchedTags}
-              filteredBook={filteredBook}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer
-              matchedTags={matchedTags}
-              filteredBook={filteredBook}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-            <BookCardVer
-              matchedTags={matchedTags}
-              filteredBook={filteredBook}
-            />
-          </div>
-        </SwiperSlide>
+        {sliderBooks.map((book) => (
+          <SwiperSlide key={book.id}>
+            <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
+              <BookCardVer
+                titleOfBook={book.title}
+                author={book.author}
+                image={book?.image}
+                discount={book?.discount}
+                price={book?.price}
+                rating={book?.rating}
+                reviewsComment={book?.reviewsComment}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
         <SwiperNavButton />
       </Swiper>
     </div>

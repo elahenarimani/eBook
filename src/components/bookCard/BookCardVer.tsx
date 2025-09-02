@@ -5,14 +5,35 @@ import ImageSection from "./component/ImageSection";
 
 import { Book } from "@/type/book";
 interface BookProp {
-  matchedTags: string[];
-  filteredBook: Book[];
+  titleOfBook: string;
+  author: string;
+  image: string;
+  discount: number;
+  price: number;
+  rating: number;
+  reviewsComment: number;
 }
-const BookCardVer = ({ matchedTags, filteredBook }: BookProp) => {
+
+const BookCardVer = ({
+  titleOfBook,
+  author,
+  image,
+  discount,
+  price,
+  rating,
+  reviewsComment,
+}: BookProp) => {
   return (
     <div className="!w-[167px] h-[374px] sm:w-[197px] sm:h-[417px] flex flex-col justify-between items-center rounded-[8px] relative">
-      <ImageSection matchedTags={matchedTags} filteredBook={filteredBook} />
-      <BookInfoSection matchedTags={matchedTags} filteredBook={filteredBook} />
+      <ImageSection image={image} />
+      <BookInfoSection
+        author={author}
+        titleOfBook={titleOfBook}
+        discount={discount}
+        price={price}
+        rating={rating}
+        reviewsComment={reviewsComment}
+      />
     </div>
   );
 };

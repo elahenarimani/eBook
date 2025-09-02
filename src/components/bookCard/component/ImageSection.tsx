@@ -1,19 +1,16 @@
 import React from "react";
 import Image from "next/image";
 
-import { Book } from "@/type/book";
 interface ImageProos {
-  matchedTags: string[];
-  filteredBook: Book[];
+  image: string;
 }
-const ImageSection = ({ matchedTags, filteredBook }: ImageProos) => {
-  console.log(matchedTags, filteredBook);
+const ImageSection = ({ image }: ImageProos) => {
   return (
     <div className="w-full h-[246px]">
       <div className="w-full h-full flex justify-center items-center bg-[#EBEBEB] py-[24px] px-[10px] sm:p-[36px] rounded-tl-[8px] rounded-tr-[8px]">
         <div className="w-[125px] h-[198px] sm:w-[125px] relative">
           <Image
-            src="/images/18022baf12415b319ad7887d86e223147f7fdc14.png"
+            src={image}
             fill
             style={{ objectFit: "cover" }}
             alt="image of book"

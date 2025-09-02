@@ -1,16 +1,25 @@
-import { Book } from "@/type/book";
 import React from "react";
 interface BookProp {
-  matchedTags: string[];
-  filteredBook: Book[];
+  author: string;
+  titleOfBook: string;
+  discount: number;
+  price: number;
+  rating: number;
+  reviewsComment: number;
 }
-const BookInfoSection = ({ matchedTags, filteredBook }: BookProp) => {
-  console.log(matchedTags, filteredBook);
+const BookInfoSection = ({
+  author,
+  titleOfBook,
+  discount,
+  price,
+  rating,
+  reviewsComment,
+}: BookProp) => {
   return (
     <div className="rounded-bl-[8px] rounded-br-[8px] w-full h-full flex flex-col justify-between items-start gap-[12px] p-[12px]">
       <div className="flex flex-col justify-between items-start gap-[4px]">
-        <p className="text-[14px] sm:text-[16px]">title</p>
-        <p className="text-[#8A8A8A] text-[12px] font-light">autor</p>
+        <p className="text-[14px] sm:text-[16px]">{titleOfBook}</p>
+        <p className="text-[#8A8A8A] text-[12px] font-light">{author}</p>
         <div className="w-full h-[16px] flex flex-row justify-start items-center gap-[4px]">
           <svg
             width="16"
@@ -24,17 +33,19 @@ const BookInfoSection = ({ matchedTags, filteredBook }: BookProp) => {
               fill="#E1BD09"
             />
           </svg>
-          <p className="w-[18px] h-[16px] text-[12px] pt-[2px]">3.4</p>
+          <p className="w-[18px] h-[16px] text-[12px] pt-[2px]">{rating}</p>
           <p className="w-[21px] h-[16px] text-[#B0B0B0] text-[12px] pt-[2px]">
-            (102)
+            ({reviewsComment})
           </p>
         </div>
       </div>
       <div className="w-full !h-[2px] border-b-[#D7D7D7] border-b-[1px]"></div>
       <div className="w-full flex flex-row justify-between items-center text-[12px] gap-[8px] sm:text-[14px]">
-        <p className="product-discount line-through text-[#9D9D9D]">116,000</p>
+        <p className="product-discount line-through text-[#9D9D9D]">
+          {discount}
+        </p>
         <p className="product-price w-full flex-row justify-between items-center gap-[4px]">
-          116,000{" "}
+          {price}
           <span className="currency text-[#8A8A8A] sm:hidden">تومان</span>
         </p>
       </div>

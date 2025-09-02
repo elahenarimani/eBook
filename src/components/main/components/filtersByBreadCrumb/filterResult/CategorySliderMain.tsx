@@ -2,6 +2,7 @@ import React from "react";
 
 import BookCarousel from "@/components/bookCarousel/BookCarousel";
 import Button from "@/components/button/Button";
+import { books } from "@/data/books";
 import { Book } from "@/type/book";
 
 interface CategorySlider {
@@ -11,10 +12,15 @@ interface CategorySlider {
 const CategorySliderMain = ({ filteredBook, matchedTags }: CategorySlider) => {
   console.log("filteredBook", filteredBook);
   console.log("matchedTags ", matchedTags);
-
+  function findSliderTitle(title: string): Book[] {
+    return books.filter((book) => book.tags.includes(title));
+  }
   return (
     <div className="!max-w-[350px] h-full sm:!w-full sm:!min-w-full flex flex-col justify-between items-center gap-[34px] bg-[#F5F6F8]">
       {filteredBook.map((book, index) => {
+        const sliderTitle = matchedTags[index];
+        const sliderBooks = findSliderTitle(sliderTitle);
+        console.log("sliderBooks", sliderBooks);
         return (
           <div
             className="w-full h-full flex flex-col justify-between items-center gap-[12px]"
@@ -22,7 +28,7 @@ const CategorySliderMain = ({ filteredBook, matchedTags }: CategorySlider) => {
           >
             <div className="w-full h-full flex flex-row justify-between items-center">
               <p className="h-full text-[14px] truncate sm:text-[24px] sm:font-bold pb-[2px]">
-                {matchedTags[index]}
+                {sliderTitle}
               </p>
               <div>
                 <Button
@@ -47,10 +53,7 @@ const CategorySliderMain = ({ filteredBook, matchedTags }: CategorySlider) => {
                 </Button>
               </div>
             </div>
-            <BookCarousel
-              matchedTags={matchedTags}
-              filteredBook={filteredBook}
-            />
+            <BookCarousel sliderBooks={sliderBooks} />
           </div>
         );
       })}
