@@ -1,0 +1,14 @@
+.search-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-scrollbar::-webkit-scrollbar-track {
+  background: #d8c8dc;
+  border-radius: 16px; /* باعث میشه بال و پایین گوشه‌دار شه */
+  margin: 4px 0;       /* یه ذره فاصله از بالا و پایین بده */
+}
+
+.search-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #744D7E;
+  border-radius: 16px; /* خود دستگیره هم گرد میشه */
+}

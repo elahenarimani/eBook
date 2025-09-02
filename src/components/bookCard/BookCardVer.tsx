@@ -3,7 +3,6 @@ import React from "react";
 import BookInfoSection from "./component/BookInfoSection";
 import ImageSection from "./component/ImageSection";
 
-import { Book } from "@/type/book";
 interface BookProp {
   titleOfBook: string;
   author: string;

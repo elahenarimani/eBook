@@ -53,7 +53,7 @@ const HeaderActions = () => {
           />
         </svg>
       </div>
-      <div className="w-[817px] h-[50px]">
+      <div className="w-[817px] h-[50px] relative visible">
         <SearchBar />
       </div>
       <Button variant="Secondary">

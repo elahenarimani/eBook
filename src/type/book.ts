@@ -66,14 +66,14 @@ export interface Book {
   name?: string;
   author: string;
   authorEn: string;
-  publisher?: string;
-  image?: string;
-  rating?: number;
-  reviewsComment?: number;
-  price?: number;
-  discount?: number;
+  publisher: string;
+  image: string;
+  rating: number;
+  reviewsComment: number;
+  price: number;
+  discount: number;
   tags: string[];
   contentType: ContentType;
-  category?: MainCategory;
-  subCategory?: SubCategory;
+  category: MainCategory;
+  subCategory: SubCategory;
 }
