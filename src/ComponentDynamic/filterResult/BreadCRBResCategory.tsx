@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import Button from "@/components/button/Button";
+import CategorySliderCategory from "./CategorySliderCategory";
 
+import Button from "@/components/button/Button";
 import { books } from "@/data/books";
 import { Book } from "@/type/book";
-import CategorySliderCategory from "./CategorySliderCategory";
 interface BreadResProp {
   allData: string[];
 }

@@ -6,6 +6,7 @@ import "./globals.css";
 import HeaderDes from "../components/header/HeaderDes";
 
 import HeaderMob from "@/components/header/HeaderMob";
+import NavigationBar from "@/components/main/components/navigationBar/NavigationBar";
 
 const vazirFont = localFont({
   src: "../font/Vazirmatn-Regular.ttf",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <HeaderDes />
         <HeaderMob />
         <div className="w-full min-h-screen bg-[#F5F6F8]">{children}</div>
+        <NavigationBar />
       </body>
     </html>
   );

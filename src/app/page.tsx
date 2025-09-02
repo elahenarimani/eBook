@@ -18,7 +18,6 @@ import FiltersByBreadCrumbMain from "@/components/main/components/filtersByBread
 // import FilterMob from "@/components/main/components/filters/mobileFilters/FilterMob";
 // import ProductSorting from "@/components/main/components/modalFilterMob/ProductSorting";
 // import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
-import NavigationBar from "@/components/main/components/navigationBar/NavigationBar";
 // import ModalSorting from "@/components/main/components/filters/mobileFilters/ModalSorting";
 // import FilterTextBooks from "@/components/main/components/filters/desktopFilters/components/filterText/FilterTextBooks";
 // import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
@@ -72,7 +71,6 @@ export default function Home() {
         <FooterDes />
         <div className="!max-w-[390px] !mx-auto sm:w-full sm:mx-0 sm:hidden">
           <FooterMobSize />
-          <NavigationBar />
         </div>
       </footer>
     </div>

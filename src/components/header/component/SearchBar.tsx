@@ -1,34 +1,39 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import "./searchBar.css";
 
 import Input from "../../input/Input";
 
-import SearchResult from "@/components/searchComponents/SearchResult";
 import { books } from "@/data/books";
 import { Book } from "@/type/book";
 
 const SearchBar = () => {
-  const [search, setSearch] = useState<string>("");
-  const [debounceSearch, setDebounceSearch] = useState<string>("");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const initialSearch = searchParams.get("q") || "";
+  const [search, setSearch] = useState<string>(initialSearch);
+  // const [debounceSearch, setDebounceSearch] = useState<string>(initialSearch);
   useEffect(() => {
     const handler = setTimeout(() => {
-      setDebounceSearch(search);
-    }, 500);
+      // setDebounceSearch(search);
+      if (search) {
+        router.push(`/search?q=${encodeURIComponent(search)}`);
+      } else {
+        router.push("?");
+      }
+    }, 2000);
+    return () => clearTimeout(handler);
+  }, [search, router]);
 
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [search]);
-
-  const searchResult: Book[] = debounceSearch
-    ? books.filter(
-        (book) =>
-          book.tags.some((tag) => tag.includes(debounceSearch)) ||
-          book.title.includes(debounceSearch)
-      )
-    : [];
+  // const searchResult: Book[] = debounceSearch
+  //   ? books.filter(
+  //       (book) =>
+  //         book.tags.some((tag) => tag.includes(debounceSearch)) ||
+  //         book.title.includes(debounceSearch),
+  //     )
+  //   : [];
   return (
     <div className="search-container w-full h-full">
       <div className="w-full h-full max-w-[390px] sm:max-w-[1280px] mx-auto border-[1px] border-[#C3C3C3] rounded-[8px] px-[4px] pr-[6px] pl-[10px] flex justify-between items-center">
@@ -58,29 +63,31 @@ const SearchBar = () => {
           />
         </svg>
 
-        <div
+        {/* <div
           className={`search-scrollbar z-[50] visible absolute !max-w-[350px] sm:!max-w-[1280px] mx-auto mt-1 max-h-[60vh] overflow-y-auto border-[1px] border-[#C3C3C3] rounded-[16px] !px-[6px] overflow-auto bg-white shadow-lg top-[100%] right-[8px] left-[8px] ${
             debounceSearch ? "block" : "hidden"
           }`}
-        >
-          {debounceSearch &&
+        > */}
+        {/* {debounceSearch &&
             (searchResult.length > 0 ? (
               searchResult.map((item) => (
-                <div
+                <Button
+                  variant="publicButton"
                   key={item.id}
-                  className="!max-w-[390px] sm:!max-w-[1280px] px-4 py-2 hover:bg-[#d8c8dc] cursor-pointer active:bg-primary active:text-white"
+                  className="w-full h-full px-4 py-2 hover:bg-[#d8c8dc] cursor-pointer active:bg-primary active:text-white flex justify-start items-center"
                 >
-                  <p className="font-semibold">{item.title}</p>
-                  <p className="text-gray-500 text-sm active:text-white">
+                  <p className="font-semibold active:text-white truncate">
+                    {item.title} -
+                  </p>
+                  <p className="text-gray-500 text-sm active:text-white truncate">
                     {item.author}
                   </p>
-                </div>
+                </Button>
               ))
             ) : (
               <p className="px-4 py-2 text-gray-400">نتیجه‌ای پیدا نشد.</p>
-            ))}
-          <SearchResult />
-        </div>
+            ))} */}
+        {/* </div> */}
       </div>
     </div>
   );
