@@ -6,7 +6,7 @@ import CategoriesSection from "./component/footerMob/CategoriesSection";
 
 const Footer = () => {
   return (
-    <div className="w-full sm:hidden min-h-[100vh] max-h-[100vh] h-full overflow-y-hidden">
+    <div className="w-full sm:hidden min-h-[100vh] max-h-[100vh] h-full">
       <div className="!max-w-[390px] h-[84px] !mx-auto flex flex-col justify-baseline items-start">
         <div className="w-full h-[84px] bg-white flex justify-between items-center p-[20px] rounded-[8px] gap-[96px]">
           <div className="h-[44px]">

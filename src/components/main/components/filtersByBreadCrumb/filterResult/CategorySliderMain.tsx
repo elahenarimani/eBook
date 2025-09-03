@@ -8,8 +8,15 @@ import { Book } from "@/type/book";
 interface CategorySlider {
   filteredBook: Book[];
   matchedTags: string[];
+  searchType: "tag" | "title" | null;
+  searchTitleResult: Book[];
 }
-const CategorySliderMain = ({ filteredBook, matchedTags }: CategorySlider) => {
+const CategorySliderMain = ({
+  filteredBook,
+  matchedTags,
+  searchType,
+  searchTitleResult,
+}: CategorySlider) => {
   console.log("filteredBook", filteredBook);
   console.log("matchedTags ", matchedTags);
   function findSliderTitle(title: string): Book[] {
@@ -53,7 +60,11 @@ const CategorySliderMain = ({ filteredBook, matchedTags }: CategorySlider) => {
                 </Button>
               </div>
             </div>
-            <BookCarousel sliderBooks={sliderBooks} />
+            <BookCarousel
+              sliderBooks={sliderBooks}
+              searchType={searchType}
+              searchTitleResult={searchTitleResult}
+            />
           </div>
         );
       })}

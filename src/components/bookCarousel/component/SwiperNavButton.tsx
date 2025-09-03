@@ -4,7 +4,7 @@ import { useSwiper } from "swiper/react";
 const SwiperNavButton = () => {
   const swiper = useSwiper();
   return (
-    <div className="custom-button !w-full !h-[37] hidden sm:!flex flex-row justify-between items-center gap-[100px]">
+    <div className="custom-button !w-full !h-[37] hidden sm:!flex flex-row justify-between items-center gap-[100px] z-50">
       <button
         className="custom-prev-btn !w-[36px] !h-[36px] bg-white rounded-[100px] absolute top-1/2 -translate-y-1/2 z-1000000 left-[-18px] flex justify-center items-center cursor-pointer"
         onClick={() => swiper?.slidePrev()}

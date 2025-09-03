@@ -7,6 +7,7 @@ import HeaderDes from "../components/header/HeaderDes";
 
 import HeaderMob from "@/components/header/HeaderMob";
 import NavigationBar from "@/components/main/components/navigationBar/NavigationBar";
+import FooterDes from "@/components/footer/FooterDes";
 
 const vazirFont = localFont({
   src: "../font/Vazirmatn-Regular.ttf",
@@ -28,6 +29,9 @@ export default function RootLayout({
         <HeaderDes />
         <HeaderMob />
         <div className="w-full min-h-screen bg-[#F5F6F8]">{children}</div>
+        <footer className="hidden sm:block w-full h-full">
+          <FooterDes />
+        </footer>
         <NavigationBar />
       </body>
     </html>

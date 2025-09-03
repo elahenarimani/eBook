@@ -6,34 +6,21 @@ import "./searchBar.css";
 
 import Input from "../../input/Input";
 
-import { books } from "@/data/books";
-import { Book } from "@/type/book";
-
 const SearchBar = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const initialSearch = searchParams.get("q") || "";
   const [search, setSearch] = useState<string>(initialSearch);
-  // const [debounceSearch, setDebounceSearch] = useState<string>(initialSearch);
   useEffect(() => {
     const handler = setTimeout(() => {
-      // setDebounceSearch(search);
       if (search) {
         router.push(`/search?q=${encodeURIComponent(search)}`);
       } else {
         router.push("?");
       }
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(handler);
   }, [search, router]);
-
-  // const searchResult: Book[] = debounceSearch
-  //   ? books.filter(
-  //       (book) =>
-  //         book.tags.some((tag) => tag.includes(debounceSearch)) ||
-  //         book.title.includes(debounceSearch),
-  //     )
-  //   : [];
   return (
     <div className="search-container w-full h-full">
       <div className="w-full h-full max-w-[390px] sm:max-w-[1280px] mx-auto border-[1px] border-[#C3C3C3] rounded-[8px] px-[4px] pr-[6px] pl-[10px] flex justify-between items-center">
@@ -47,7 +34,6 @@ const SearchBar = () => {
           }
           value={search}
         />
-
         <svg
           width="16"
           height="16"

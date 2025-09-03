@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Link from "next/link";
 
 import Button from "../button/Button";
 
@@ -52,12 +53,14 @@ const NoSearchResult = () => {
             </p>
           </div>
         </div>
-        <Button
-          className="text-[11px] truncate px-[12.5px] py-[8px] sm:text-[12.5px] sm:p-[12px]"
-          variant="Primary"
-        >
-          بازگشت به صفحه اصلی
-        </Button>
+        <Link href={"/"}>
+          <Button
+            className="text-[11px] truncate px-[12.5px] py-[8px] sm:text-[12.5px] sm:p-[12px]"
+            variant="Primary"
+          >
+            بازگشت به صفحه اصلی
+          </Button>
+        </Link>
       </div>
     </div>
   );
