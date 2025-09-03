@@ -10,12 +10,14 @@ interface CategorySlider {
   matchedTags: string[];
   searchType: "tag" | "title" | null;
   searchTitleResult: Book[];
+  matchedPublisher: string[];
 }
 const CategorySliderMain = ({
   filteredBook,
   matchedTags,
   searchType,
   searchTitleResult,
+  matchedPublisher,
 }: CategorySlider) => {
   console.log("filteredBook", filteredBook);
   console.log("matchedTags ", matchedTags);
@@ -62,6 +64,7 @@ const CategorySliderMain = ({
             </div>
             <BookCarousel
               sliderBooks={sliderBooks}
+              matchedPublisher={matchedPublisher}
               searchType={searchType}
               searchTitleResult={searchTitleResult}
             />

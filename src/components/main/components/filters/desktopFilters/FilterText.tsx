@@ -54,7 +54,7 @@ const FilterText = () => {
   const useOutsideClick = (close: () => void) => {
     useEffect(() => {
       const handleClick = () => {
-        close(); // هر کلیک روی صفحه باعث بسته شدن میشه
+        close();
       };
       document.addEventListener("mousedown", handleClick);
       return () => {
@@ -62,8 +62,6 @@ const FilterText = () => {
       };
     }, [close]);
   };
-
-  // فعال کردن hook برای هر منو
   useOutsideClick(() => {
     if (isTextBooksOpen) setIsTextBooksOpen(false);
   });
@@ -129,7 +127,7 @@ const FilterText = () => {
         <Button
           styles=" "
           variant="publicButton"
-          className="w-full flex justify-start items-center gap-[4px] cursor-pointer border-b border-[#EBEBEB] py-[16px]"
+          className="w-full flex justify-start items-center gap-[4px] cursor-pointer py-[16px]"
           onClickHandler={() => setIsForeignStoriesOpen(!isForeignStoriesOpen)}
         >
           <p> داستان و رمان خارجی</p>

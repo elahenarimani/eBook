@@ -9,8 +9,10 @@ import FooterDes from "../components/footer/FooterDes";
 // import BookCardVer from "@/components/bookCard/BookCardVer";
 // import BookCarousel from "@/components/bookCarousel/BookCarousel";
 import FooterMobSize from "@/components/footer/FooterMobSize";
+// import CategorySliderrr from "@/components/main/categorySlider/CategorySliderrr";
 import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
 import AuthorPublisherFilter from "@/components/main/components/filters/desktopFilters/AuthorPublisherFilter";
+import BookFilters from "@/components/main/components/filters/desktopFilters/BookFilters";
 import ContentType from "@/components/main/components/filters/desktopFilters/ContentType";
 import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
 import FiltersByBreadCrumbMain from "@/components/main/components/filtersByBreadCrumb/FiltersByBreadCrumbMain";
@@ -31,10 +33,7 @@ import FiltersByBreadCrumbMain from "@/components/main/components/filtersByBread
 // import CheckBox from "@/components/checkBox/CheckBox";
 
 // import PrimaryBtn from "../components/button/PrimaryBtn";
-// interface FilterType {
-//   name: string;
-//   id: number;
-// }
+
 export default function Home() {
   // const publisherData: FilterType[] = [
   //   { id: 1, name: "انتشارات 360 درجه" },
@@ -52,19 +51,21 @@ export default function Home() {
   //   { id: 5, name: "Irvin D. Yalom" },
   //   { id: 6, name: "Darren Hardy" },
   // ];
+
   return (
     <div className="w-full h-full">
       <main className="h-full !max-w-[390px] sm:!max-w-[1280px] mx-auto !px-[20px] xl:px-[80px] overflow-x-hidden sm:flex sm:flex-col sm:justify-between sm:items-start">
         <div className="hidden sm:block py-[24px]">
           <Breadcrumb />
         </div>
-        <div className="hidden sm:flex w-full h-full flex-col justify-start items-start">
-          <FilterText />
-          <ContentType />
-          <AuthorPublisherFilter title={""} options={[]} />
-        </div>
-        <div className="block sm:hidden">
-          <FiltersByBreadCrumbMain />
+        <div className="flex justify-between items-start">
+          <BookFilters />
+          <div className="block sm:hidden">
+            <FiltersByBreadCrumbMain />
+          </div>
+          <div className="hidden sm:block">
+            {/* <CategorySliderrr /> */}
+          </div>
         </div>
       </main>
       <footer className="block w-full h-full">

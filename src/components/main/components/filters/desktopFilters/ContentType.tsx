@@ -4,7 +4,7 @@ import Button from "@/components/button/Button";
 
 const ContentType = () => {
   return (
-    <div className="w-[304px] h-[182px] bg-white border-[1px] border-[#EBEBEB] p-[16px] gap-[16px] rounded-[4px] flex flex-col">
+    <div className="w-[304px] h-[190px] bg-white border-[1px] border-[#EBEBEB] p-[16px] gap-[16px] rounded-[4px] flex flex-col">
       <div className="text-[16px] border-b border-[#EBEBEB] pb-[16px]">
         نوع محتوا{" "}
       </div>

@@ -30,11 +30,13 @@ interface BookProp {
   slidesPerViewConfig?: SlidesPerViewConfig;
   searchTitleResult: Book[];
   searchType: "tag" | "title" | null;
+  matchedPublisher: string[];
 }
 const BookCarousel = ({
   sliderBooks,
   searchTitleResult,
   searchType,
+  matchedPublisher,
   containerClassName = "max-w-[1280px]",
   slidesPerViewConfig = {
     default: 4.5,
@@ -49,6 +51,38 @@ const BookCarousel = ({
   },
 }: BookProp) => {
   console.log("searchTitleResult", searchTitleResult);
+  console.log("matchpub", matchedPublisher);
+
+  // const filteredBooks: Book[] = [];
+  // matchedPublisher.forEach((publisher) => {
+  //   const booksForPublisher = searchTitleResult.filter(
+  //     (book) => book.publisher === publisher
+  //   );
+  //   //
+  //   filteredBooks.push(booksForPublisher);
+  //   return filteredBooks;
+  // });
+
+  // console.log(filteredBooks);
+
+  // console.log("filteredBooks", filteredBooks);
+  // function filterb(): Book[] {
+  //   const filteredBooks: Book[] = [];
+
+  //   matchedPublisher.forEach((publisher) => {
+  //     const booksForPublisher: Book = searchTitleResult.find(
+  //       (book) => book.publisher === publisher,
+  //     );
+  //     console.log("booksForPublisher", booksForPublisher);
+  //     if (booksForPublisher) {
+  //       filteredBooks.push(booksForPublisher);
+  //     }
+  //     //
+  //   });
+
+  //   return filteredBooks;
+  // }
+  // const filteredBooks = filterb();
   return (
     <div
       className={`w-[370px] h-[378px] sm:!min-w-full sm:h-[427px] relative text-center max-w-[995px] mx-auto bg-amber-400 flex justify-center items-center ${containerClassName}`}
@@ -75,21 +109,25 @@ const BookCarousel = ({
                 </div>
               </SwiperSlide>
             ))
-          : searchTitleResult.map((book) => (
-              <SwiperSlide key={book.id}>
-                <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
-                  <BookCardVer
-                    titleOfBook={book.title}
-                    author={book.author}
-                    image={book?.image}
-                    discount={book?.discount}
-                    price={book?.price}
-                    rating={book?.rating}
-                    reviewsComment={book?.reviewsComment}
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
+          : matchedPublisher.flatMap((publisher) =>
+              searchTitleResult
+                .filter((book) => book.publisher === publisher)
+                .map((book) => (
+                  <SwiperSlide key={book.id}>
+                    <div className="w-[167px] h-[374px] sm:min-w-[197px] sm:max-w-[197px] sm:h-[417px] bg-red-500 flex justify-center items-center">
+                      <BookCardVer
+                        titleOfBook={book.title}
+                        author={book.author}
+                        image={book?.image}
+                        discount={book?.discount}
+                        price={book?.price}
+                        rating={book?.rating}
+                        reviewsComment={book?.reviewsComment}
+                      />
+                    </div>
+                  </SwiperSlide>
+                )),
+            )}
         <SwiperNavButton />
       </Swiper>
     </div>

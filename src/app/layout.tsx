@@ -5,9 +5,9 @@ import "./globals.css";
 
 import HeaderDes from "../components/header/HeaderDes";
 
+import FooterDes from "@/components/footer/FooterDes";
 import HeaderMob from "@/components/header/HeaderMob";
 import NavigationBar from "@/components/main/components/navigationBar/NavigationBar";
-import FooterDes from "@/components/footer/FooterDes";
 
 const vazirFont = localFont({
   src: "../font/Vazirmatn-Regular.ttf",

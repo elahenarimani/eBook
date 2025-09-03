@@ -151,7 +151,6 @@ const SearchResult = () => {
   function searchBooks() {
     const searchResults: Book[] = [];
     const matchedTags: string[] = [];
-    // const matchedTitle: string;
     const matchedPublisher: string[] = [];
     const searchTitleResult: Book[] = [];
     let searchType: "tag" | "title" | null = null;
@@ -202,15 +201,15 @@ const SearchResult = () => {
     searchTitleResult,
   } = searchBooks();
   useEffect(() => {
-    console.log("searchResults", searchResults);
-    console.log("matchedTags", matchedTags);
-    console.log("searchType", searchType);
+    // console.log("searchResults", searchResults);
+    // console.log("matchedTags", matchedTags);
+    // console.log("searchType", searchType);
     console.log("matchedPublisher", matchedPublisher);
     console.log("searchTitleResult", searchTitleResult);
   }, [
-    searchResults,
-    matchedTags,
-    searchType,
+    // searchResults,
+    // matchedTags,
+    // searchType,
     matchedPublisher,
     searchTitleResult,
   ]);
