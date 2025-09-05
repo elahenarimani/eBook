@@ -11,11 +11,8 @@ import FooterDes from "../components/footer/FooterDes";
 import FooterMobSize from "@/components/footer/FooterMobSize";
 // import CategorySliderrr from "@/components/main/categorySlider/CategorySliderrr";
 import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
-import AuthorPublisherFilter from "@/components/main/components/filters/desktopFilters/AuthorPublisherFilter";
 import BookFilters from "@/components/main/components/filters/desktopFilters/BookFilters";
-import ContentType from "@/components/main/components/filters/desktopFilters/ContentType";
-import FilterText from "@/components/main/components/filters/desktopFilters/FilterText";
-import FiltersByBreadCrumbMain from "@/components/main/components/filtersByBreadCrumb/FiltersByBreadCrumbMain";
+
 // import Breadcrumb from "@/components/main/components/breadcrumb/Breadcrumb";
 // import FilterMob from "@/components/main/components/filters/mobileFilters/FilterMob";
 // import ProductSorting from "@/components/main/components/modalFilterMob/ProductSorting";
@@ -54,18 +51,18 @@ export default function Home() {
 
   return (
     <div className="w-full h-full">
-      <main className="h-full !max-w-[390px] sm:!max-w-[1280px] mx-auto !px-[20px] xl:px-[80px] overflow-x-hidden sm:flex sm:flex-col sm:justify-between sm:items-start">
+      <main className="h-full !max-w-[390px] sm:!max-w-[1280px] mx-auto !px-[20px] xl:px-[80px] overflow-x-hidden sm:flex sm:flex-col sm:justify-between sm:items-start ">
         <div className="hidden sm:block py-[24px]">
           <Breadcrumb />
         </div>
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-start gap-[21px]">
           <BookFilters />
           <div className="block sm:hidden">
-            <FiltersByBreadCrumbMain />
+            {/* <FiltersByBreadCrumbMain /> */}
           </div>
-          <div className="hidden sm:block">
-            {/* <CategorySliderrr /> */}
-          </div>
+          {/* <div className="hidden sm:block">
+            <BookFilters />
+          </div> */}
         </div>
       </main>
       <footer className="block w-full h-full">

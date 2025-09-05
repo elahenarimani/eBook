@@ -400,7 +400,7 @@ export const books: Book[] = [
     price: 301000,
     discount: 30,
     contentType: "کتاب متنی",
-    category: "داستان و رمان خارجی",
+    category: "داستان و رمان",
     subCategory: "درام",
     tags: [
       "پرفروش‌ترین کتاب‌های ماه گذشته",

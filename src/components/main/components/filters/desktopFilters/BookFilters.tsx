@@ -1,117 +1,100 @@
 "use client";
-import React from "react";
-import { useBookFilterStore } from "@/store/useBookFilterStore";
+import React, { useEffect, useState } from "react";
 
 import AuthorPublisherFilter from "./AuthorPublisherFilter";
-import ContentType from "./ContentType";
+import ContentTypeFilter from "./ContentTypeFilter";
 import FilterText from "./FilterText";
-interface FilterType {
-  name: string;
-  id: number;
-}
-interface FilterProps {
-  allCategories: string[];
-  allContentTypes: string[];
-  allAuthors: string[];
-  allPublishers: string[];
-}
-const BookFilters = ({
-  allCategories,
-  allContentTypes,
-  allAuthors,
-  allPublishers,
-}: FilterProps) => {
-  const publisherData: FilterType[] = [
-    { id: 1, name: "انتشارات 360 درجه" },
-    { id: 2, name: "انتشارات جنگل" },
-    { id: 3, name: "نشر چشمه" },
-    { id: 4, name: "دنیای اقتصاد" },
-    { id: 5, name: "انتشارات ایران" },
-    { id: 6, name: "نشر افق" },
-  ];
-  const authorData: FilterType[] = [
-    { id: 1, name: "Elif Shafak" },
-    { id: 2, name: "Gabor Mate" },
-    { id: 3, name: "Matt Haig" },
-    { id: 4, name: "James Clear" },
-    { id: 5, name: "Irvin D. Yalom" },
-    { id: 6, name: "Darren Hardy" },
-  ];
-  const {
+
+import CategorySliderMain from "@/components/main/categorySlider/CategorySliderMain";
+import { books } from "@/data/books";
+import { Book, ContentType, MainCategory } from "@/type/book";
+
+const BookFilters = () => {
+  const [filteredBooks, setFilteredBooks] = useState<Book[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<MainCategory[]>(
+    [],
+  );
+  const [selectedContentTypes, setSelectedContentTypes] = useState<string[]>(
+    [],
+  );
+  const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
+  const [selectedPublishers, setSelectedPublishers] = useState<string[]>([]);
+  useEffect(() => {
+    const filtered = books.filter((book) => {
+      const matchCategory =
+        selectedCategories.length === 0 ||
+        selectedCategories.includes(book.category);
+
+      const matchContentType =
+        selectedContentTypes.length === 0 ||
+        selectedContentTypes.includes(book.contentType);
+
+      const matchAuthor =
+        selectedAuthors.length === 0 || selectedAuthors.includes(book.author);
+
+      const matchPublisher =
+        selectedPublishers.length === 0 ||
+        selectedPublishers.includes(book.publisher);
+      return matchCategory && matchContentType && matchAuthor && matchPublisher;
+    });
+
+    setFilteredBooks(filtered);
+  }, [
     selectedCategories,
     selectedContentTypes,
     selectedAuthors,
     selectedPublishers,
-    setCategories,
-    setContentTypes,
-    setAuthors,
-    setPublishers,
-  } = useBookFilterStore();
+    books,
+  ]);
+  const allcategories: MainCategory[] = [
+    ...new Set(books.map((book) => book.category)),
+  ];
+  const contentTypes: ContentType[] = [
+    ...new Set(books.map((book) => book.contentType)),
+  ];
+  const authors: string[] = [...new Set(books.map((book) => book.author))];
+  const publishers: string[] = [
+    ...new Set(books.map((book) => book.publisher)),
+  ];
   return (
-    <div className="hidden sm:flex w-full h-full flex-col justify-start items-start gap-[16px]">
-      <FilterText />
-      <ContentType />
-      <AuthorPublisherFilter
-        title="نویسنده، مترجم یا راوی"
-        options={publisherData}
-      />
-      <AuthorPublisherFilter title="ناشر" options={authorData} />
+    <div className="w-full flex flex-row justify-between items-start gap-[16px]">
+      <div className="hidden sm:flex w-full h-full flex-col justify-start items-start gap-[16px]">
+        <FilterText
+          allcategories={allcategories}
+          selectedCategories={selectedCategories}
+          setSelectedCategories={setSelectedCategories}
+        />
+        <ContentTypeFilter
+          contentTypes={contentTypes}
+          selectedContentTypes={selectedContentTypes}
+          setSelectedContentTypes={setSelectedContentTypes}
+        />
+        <AuthorPublisherFilter
+          title="نویسنده، مترجم یا راوی"
+          // options={publisherData}
+          authors={authors}
+          publishers={publishers}
+          selectedAuthors={selectedAuthors}
+          setSelectedAuthors={setSelectedAuthors}
+          selectedPublishers={selectedPublishers}
+          setSelectedPublishers={setSelectedPublishers}
+        />
+        <AuthorPublisherFilter
+          title="ناشر"
+          // options={authorData}
+          authors={authors}
+          publishers={publishers}
+          selectedAuthors={selectedAuthors}
+          setSelectedAuthors={setSelectedAuthors}
+          selectedPublishers={selectedPublishers}
+          setSelectedPublishers={setSelectedPublishers}
+        />
+      </div>
+      <div className="w-full h-full">
+        <CategorySliderMain filteredBooks={filteredBooks} />
+      </div>
     </div>
   );
 };
 
 export default BookFilters;
-
-//   <div className="flex flex-wrap gap-4 mb-6">
-//       <div>
-//         <h3>دسته بندی</h3>
-//         {allCategories.map((cat) => (
-//           <button
-//             key={cat}
-//             className={`px-2 py-1 border ${selectedCategories.includes(cat) ? "bg-blue-400 text-white" : ""}`}
-//             onClick={() => toggle(selectedCategories, cat, setCategories)}
-//           >
-//             {cat}
-//           </button>
-//         ))}
-//       </div>
-
-//       <div>
-//         <h3>نوع محتوا</h3>
-//         {allContentTypes.map((type) => (
-//           <button
-//             key={type}
-//             className={`px-2 py-1 border ${selectedContentTypes.includes(type) ? "bg-blue-400 text-white" : ""}`}
-//             onClick={() => toggle(selectedContentTypes, type, setContentTypes)}
-//           >
-//             {type}
-//           </button>
-//         ))}
-//       </div>
-
-//       <div>
-//         <h3>نویسنده</h3>
-//         {allAuthors.map((auth) => (
-//           <button
-//             key={auth}
-//             className={`px-2 py-1 border ${selectedAuthors.includes(auth) ? "bg-blue-400 text-white" : ""}`}
-//             onClick={() => toggle(selectedAuthors, auth, setAuthors)}
-//           >
-//             {auth}
-//           </button>
-//         ))}
-//       </div>
-
-//       <div>
-//         <h3>ناشر</h3>
-//         {allPublishers.map((pub) => (
-//           <button
-//             key={pub}
-//             className={`px-2 py-1 border ${selectedPublishers.includes(pub) ? "bg-blue-400 text-white" : ""}`}
-//             onClick={() => toggle(selectedPublishers, pub, setPublishers)}
-//           >
-//             {pub}
-//           </button>
-//         ))}
-//       </div>
-//     </div>
