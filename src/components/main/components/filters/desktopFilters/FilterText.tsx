@@ -85,18 +85,6 @@ const FilterText = ({ allcategories, setSelectedCategories }: contentProp) => {
   };
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // if (
-      //   (!textBooksRef.current ||
-      //     !textBooksRef.current.contains(event.target as Node)) &&
-      //   (!storiesRef.current ||
-      //     !storiesRef.current.contains(event.target as Node)) &&
-      //   (!foreignRef.current ||
-      //     !foreignRef.current.contains(event.target as Node))
-      // ) {
-      //   setIsTextBooksOpen(false);
-      //   setIsStoriesOpen(false);
-      //   setIsForeignStoriesOpen(false);
-      // }
       if (
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target as Node)
@@ -111,49 +99,11 @@ const FilterText = ({ allcategories, setSelectedCategories }: contentProp) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  // const useOutsideClick = (close: () => void) => {
-  //   useEffect(() => {
-  //     const handleClick = () => {
-  //       close();
-  //     };
-  //     document.addEventListener("mousedown", handleClick);
-  //     return () => {
-  //       document.removeEventListener("mousedown", handleClick);
-  //     };
-  //   }, [close]);
-  // };
-  // useOutsideClick(() => {
-  //   if (isTextBooksOpen) {
-  //     setIsTextBooksOpen(false);
-  //   } else {
-  //     setIsTextBooksOpen(true);
-  //   }
-  // });
-  // useOutsideClick(() => {
-  //   if (isStoriesOpen) {
-  //     setIsStoriesOpen(false);
-  //   } else {
-  //     setIsStoriesOpen(true);
-  //   }
-  // });
-  // useOutsideClick(() => {
-  //   if (isForeignStoriesOpen) {
-  //     setIsForeignStoriesOpen(false);
-  //   } else {
-  //     setIsForeignStoriesOpen(true);
-  //   }
-  // });
-  // function onClickHandler(all: MainCategory) {
-  //   // if(isTextBooksOpen){setIsTextBooksOpen(false)}
-  //   // setIsTextBooksOpen(!isTextBooksOpen);
-  //   setSelectedCategories((prev) =>
-  //     prev.includes(all) ? prev.filter((c) => c !== all) : [...prev, all],
-  //   );
-  // }
   function onClickHandler(all: MainCategory) {
-    setSelectedCategories((prev) =>
-      prev.includes(all) ? prev.filter((c) => c !== all) : [...prev, all],
+    setSelectedCategories((prv) =>
+      prv.includes(all) ? prv.filter((cat) => cat !== all) : [...prv, all],
     );
+    console.log(all);
   }
   return (
     <div
@@ -177,13 +127,6 @@ const FilterText = ({ allcategories, setSelectedCategories }: contentProp) => {
               if (all === "داستان و رمان خارجی")
                 toggleDropdown("داستان و رمان خارجی");
             }}
-            // onClickHandler={(all) =>
-            //   setSelectedCategories((prev) =>
-            //     prev.includes(all)
-            //       ? prev.filter((c) => c !== all)
-            //       : [...prev, all]
-            //   )
-            // }
           >
             <p>{all}</p>
             <div className="w-[20px] h-[20px]">

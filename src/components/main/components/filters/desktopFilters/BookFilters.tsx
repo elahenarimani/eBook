@@ -46,6 +46,7 @@ const BookFilters = () => {
     selectedPublishers,
     books,
   ]);
+  console.log("selectedAuthors", selectedAuthors);
   const allcategories: MainCategory[] = [
     ...new Set(books.map((book) => book.category)),
   ];
@@ -56,6 +57,9 @@ const BookFilters = () => {
   const publishers: string[] = [
     ...new Set(books.map((book) => book.publisher)),
   ];
+  console.log("selectedCategories", selectedCategories);
+  console.log("filteredBooks", filteredBooks);
+  console.log("selectedPublishers", selectedPublishers);
   return (
     <div className="w-full flex flex-row justify-between items-start gap-[16px]">
       <div className="hidden sm:flex w-full h-full flex-col justify-start items-start gap-[16px]">

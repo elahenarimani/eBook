@@ -48,7 +48,18 @@ const AuthorPublisherFilter = ({
                 key={item}
                 className="w-full h-[20px] flex flex-row justify-start items-start gap-[8px] text-[#161616]"
               >
-                <Checkbox />
+                <Checkbox
+                  checked={selectedAuthors.includes(item)}
+                  onCheckedChange={(checked) => {
+                    if (checked) {
+                      setSelectedAuthors([...selectedAuthors, item]);
+                    } else {
+                      setSelectedAuthors(
+                        selectedAuthors.filter((sel) => sel !== item),
+                      );
+                    }
+                  }}
+                />
                 <span>{item}</span>
               </label>
             ))}
@@ -68,7 +79,18 @@ const AuthorPublisherFilter = ({
                 key={item}
                 className="w-full h-[20px] flex flex-row justify-start items-start gap-[8px] text-[#161616]"
               >
-                <Checkbox />
+                <Checkbox
+                  checked={selectedPublishers.includes(item)}
+                  onCheckedChange={(checked) => {
+                    if (checked) {
+                      setSelectedPublishers([...selectedPublishers, item]);
+                    } else {
+                      setSelectedPublishers(
+                        selectedPublishers.filter((sel) => sel !== item),
+                      );
+                    }
+                  }}
+                />
                 <span>{item}</span>
               </label>
             ))}
