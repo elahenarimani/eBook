@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import AuthorPublisherFilter from "./AuthorPublisherFilter";
 import ContentTypeFilter from "./ContentTypeFilter";
@@ -10,6 +11,9 @@ import { books } from "@/data/books";
 import { Book, ContentType, MainCategory } from "@/type/book";
 
 const BookFilters = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const [filteredBooks, setFilteredBooks] = useState<Book[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<MainCategory[]>(
     [],
@@ -19,33 +23,81 @@ const BookFilters = () => {
   );
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
   const [selectedPublishers, setSelectedPublishers] = useState<string[]>([]);
+  //get from URL query parameter
   useEffect(() => {
-    const filtered = books.filter((book) => {
-      const matchCategory =
-        selectedCategories.length === 0 ||
-        selectedCategories.includes(book.category);
+    setSelectedCategories(
+      (searchParams.get("categories")?.split(",") as MainCategory[]) || [],
+    );
+    setSelectedContentTypes(searchParams.get("contentTypes")?.split(",") || []);
+    setSelectedAuthors(searchParams.get("authors")?.split(",") || []);
+    setSelectedPublishers(searchParams.get("publishers")?.split(",") || []);
+  }, [searchParams]);
+  //create URL query parameter
 
-      const matchContentType =
-        selectedContentTypes.length === 0 ||
-        selectedContentTypes.includes(book.contentType);
+  useEffect(() => {
+    // ✅ debounce timer
+    const timer = setTimeout(() => {
+      const params = new URLSearchParams();
 
-      const matchAuthor =
-        selectedAuthors.length === 0 || selectedAuthors.includes(book.author);
+      if (selectedCategories.length)
+        params.set("categories", selectedCategories.join(","));
+      if (selectedContentTypes.length)
+        params.set("contentTypes", selectedContentTypes.join(","));
+      if (selectedAuthors.length)
+        params.set("authors", selectedAuthors.join(","));
+      if (selectedPublishers.length)
+        params.set("publishers", selectedPublishers.join(","));
 
-      const matchPublisher =
-        selectedPublishers.length === 0 ||
-        selectedPublishers.includes(book.publisher);
-      return matchCategory && matchContentType && matchAuthor && matchPublisher;
-    });
+      router.replace(`?${params.toString()}`);
 
-    setFilteredBooks(filtered);
+      const filtered = books.filter(
+        (book) =>
+          (selectedCategories.length === 0 ||
+            selectedCategories.includes(book.category)) &&
+          (selectedContentTypes.length === 0 ||
+            selectedContentTypes.includes(book.contentType)) &&
+          (selectedAuthors.length === 0 ||
+            selectedAuthors.includes(book.author)) &&
+          (selectedPublishers.length === 0 ||
+            selectedPublishers.includes(book.publisher)),
+      );
+      setFilteredBooks(filtered);
+    }, 300);
+
+    return () => clearTimeout(timer);
   }, [
     selectedCategories,
     selectedContentTypes,
     selectedAuthors,
     selectedPublishers,
-    books,
   ]);
+  // useEffect(() => {
+  //   const filtered = books.filter((book) => {
+  //     const matchCategory =
+  //       selectedCategories.length === 0 ||
+  //       selectedCategories.includes(book.category);
+
+  //     const matchContentType =
+  //       selectedContentTypes.length === 0 ||
+  //       selectedContentTypes.includes(book.contentType);
+
+  //     const matchAuthor =
+  //       selectedAuthors.length === 0 || selectedAuthors.includes(book.author);
+
+  //     const matchPublisher =
+  //       selectedPublishers.length === 0 ||
+  //       selectedPublishers.includes(book.publisher);
+  //     return matchCategory && matchContentType && matchAuthor && matchPublisher;
+  //   });
+
+  //   setFilteredBooks(filtered);
+  // }, [
+  //   selectedCategories,
+  //   selectedContentTypes,
+  //   selectedAuthors,
+  //   selectedPublishers,
+  // ]);
+
   console.log("selectedAuthors", selectedAuthors);
   const allcategories: MainCategory[] = [
     ...new Set(books.map((book) => book.category)),
